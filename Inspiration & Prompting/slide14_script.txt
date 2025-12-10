@@ -1,0 +1,69 @@
+SLIDE 14: USP - MODULÄR LLM-ARKITEKTUR
+=======================================
+
+[VISIONÄR, STRATEGISK TON]
+
+Nu kommer vi till den kanske mest långsiktigt värdefulla aspekten av Inkasseras värdeerbjudande: den modulära L L M-arkitekturen.
+
+[PAUS 2 SEKUNDER]
+
+För det sjätte: Från inkasso till Enterprise Compliance Platform.
+
+[PAUS 1.5 SEKUNDER]
+
+Inkassera är byggd på en modulär Large Language Model-arkitektur som är skalbar, utbyggbar och anpassad för företagsklass.
+
+[PAUS 1.5 SEKUNDER]
+
+Den explicita expansionsplanen inkluderar avtalsanalys, kundtjänst och K Y C slash A M L-analys.
+
+[PAUS 1 SEKUND]
+
+Med flerspråks- och flerkanalsstöd och kontinuerliga regulatoriska uppdateringar.
+
+[PAUS 2 SEKUNDER]
+
+Men varför är detta unikt?
+
+[PAUS 1 SEKUND]
+
+Inkassera är inte bara en inkassolösning. Det är en grundläggande Enterprise Compliance Platform.
+
+[PAUS 2 SEKUNDER]
+
+Här är den strategiska insikten: Genom att lösa inkasso först etablerar Inkassera en teknisk grund, en compliant L L M-arkitektur, som kan återanvändas för andra datatunga, högreglerade processer.
+
+[PAUS 2 SEKUNDER]
+
+Detta skapar economies of compliance. Skalfördelar i regelefterlevnad.
+
+[PAUS 1.5 SEKUNDER]
+
+Att uppnå 99 komma 9 procent regelefterlevnad för automatiserade högriskbeslut enligt F F F S 2025 kolon 2 och E U A I Act är den högsta inträdesbarriären.
+
+[PAUS 1.5 SEKUNDER]
+
+Men när väl denna L L M-baserade, compliant kärna är etablerad kan den återanvändas för att lösa andra tunga compliance-problem, som K Y C och A M L, till en bråkdel av kostnaden.
+
+[PAUS 2 SEKUNDER]
+
+Marginalkostnaden för att lansera en ny compliant funktion sjunker drastiskt.
+
+[PAUS 1.5 SEKUNDER]
+
+Strategisk implikation: Inkassera kan expandera sin Total Addressable Market och Average Contract Value snabbare än punktlösningar som bara fokuserar på inkasso.
+
+[PAUS 2 SEKUNDER]
+
+Detta är inte en inkassolösning. Detta är infrastruktur för framtidens finansiella efterlevnad.
+
+[SLUT]
+
+---
+TEKNISKA INSTRUKTIONER FÖR ELEVENLABS:
+- Röst: Visionär, strategisk, nästan futuristisk
+- Stil: Långsiktig strategisk vision
+- Tempo: Långsammare, mer eftertänksam för att betona strategisk vikt
+- Betoning på: "Enterprise Compliance Platform", "economies of compliance", "99 komma 9 procent", "marginalkostnaden"
+- Akronymer: LLM (L-L-M), USP (U-S-P), KYC (K-Y-C), AML (A-M-L), FFFS (F-F-F-S), EU (E-U), AI (A-I)
+- Längd: Ca 120-130 sekunder

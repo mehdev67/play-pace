@@ -1,0 +1,32 @@
+SLIDE 2: INNEHÅLLSFÖRTECKNING
+===============================
+
+[STRUKTURERAD, TYDLIG TON]
+
+Denna presentation är uppdelad i tre huvudsektioner.
+
+[PAUS 1 SEKUND]
+
+Sektion ett: Ideal Customer Profile, eller I C P, där vi definierar målgruppen, deras specifika problem och beteendemönster.
+
+[PAUS 1.5 SEKUNDER]
+
+Sektion två: SWOT-analys. Vi går igenom Inkasseras styrkor, svagheter, möjligheter och hot på den svenska marknaden.
+
+[PAUS 1.5 SEKUNDER]
+
+Sektion tre: Unikhet och värdeerbjudande. Här analyserar vi vad som gör Inkassera unikt och hur företaget differentierar sig från konkurrenterna.
+
+[PAUS 2 SEKUNDER]
+
+Låt oss börja med den ideala kundprofilen.
+
+[SLUT]
+
+---
+TEKNISKA INSTRUKTIONER FÖR ELEVENLABS:
+- Röst: Samma som slide 1
+- Stil: Pedagogisk, strukturerad
+- Tempo: Medelhastighet
+- Betoning på: "tre huvudsektioner", "ICP", "SWOT-analys"
+- Längd: Ca 40-45 sekunder

@@ -1,0 +1,28 @@
+SLIDE 1: TITELSLIDE
+===================
+
+[PROFESSIONELL, VÄLKOMNANDE TON]
+
+Välkommen till denna strategiska analys av Inkassera.
+
+[PAUS 1 SEKUND]
+
+En AI-driven inkassoplattform som revolutionerar nordisk skuldhantering.
+
+[PAUS 1.5 SEKUNDER]
+
+Detta är en datadriven Research Plan fokuserad på marknadspositionering och riskbedömning för den svenska marknaden, 2025.
+
+[PAUS 2 SEKUNDER]
+
+Låt oss börja.
+
+[SLUT]
+
+---
+TEKNISKA INSTRUKTIONER FÖR ELEVENLABS:
+- Röst: Professionell, auktoritativ svensk röst
+- Stil: Presentationston, tydlig artikulation
+- Tempo: Medelhastighet (ca 150 ord/minut)
+- Emotion: Självsäker, välkomnande
+- Längd: Ca 30-35 sekunder

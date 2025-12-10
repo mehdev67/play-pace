@@ -1,0 +1,53 @@
+SLIDE 5: ICP - MARKNAD & BETEENDEMÖNSTER
+=========================================
+
+[MARKNADSANALYTISK, INSIKTSFULL TON]
+
+Låt oss titta närmare på marknadsdynamiken och kundbeteendet.
+
+[PAUS 1 SEKUND]
+
+Den svenska inkassomarknaden värderas till 440 komma 3 miljoner euro under 2025.
+
+[PAUS 1 SEKUND]
+
+Mer intressant är tillväxttakten. Marknaden för digitala lösningar växer med 11 komma 32 procent årligen.
+
+[PAUS 1.5 SEKUNDER]
+
+Målgruppens beteendemönster är tydliga.
+
+[PAUS 0.5 SEKUNDER]
+
+De söker proaktivt regelefterlevnadslösningar inför F F F S 2025 kolon 2 som träder i kraft den första juli 2025.
+
+[PAUS 1 SEKUND]
+
+Detta är en tidskritisk katalysator för marknadspenetration.
+
+[PAUS 1.5 SEKUNDER]
+
+Dessa företag prioriterar teknisk integration med befintliga system. De kräver snabb implementation, helst inom 24 till 72 timmar.
+
+[PAUS 1 SEKUND]
+
+De föredrar kostnadskontroll och budgetförutsägbarhet framför varierande provisionsmodeller.
+
+[PAUS 1 SEKUND]
+
+Och, kritiskt viktigt, de värdesätter dataägande och flexibilitet utan leverantörsinlåsning.
+
+[PAUS 2 SEKUNDER]
+
+Denna kombination av marknadstillväxt och tydligt kundbehov skapar en unik möjlighet för Inkassera.
+
+[SLUT]
+
+---
+TEKNISKA INSTRUKTIONER FÖR ELEVENLABS:
+- Röst: Analytisk, strategisk
+- Stil: Marknadsinsikter, framåtblickande
+- Tempo: Medelhastighet
+- Betoning på: "440 komma 3 miljoner", "11 komma 32 procent", "första juli 2025"
+- Akronymer: FFFS (F-F-F-S)
+- Längd: Ca 70-75 sekunder

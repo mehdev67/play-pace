@@ -1,0 +1,62 @@
+SLIDE 8: SWOT - WEAKNESSES (SVAGHETER)
+=======================================
+
+[BALANSERAD, ÄRLIG TON]
+
+Varje strategisk analys måste också adressera svagheterna. Här är Inkasseras identifierade utmaningar.
+
+[PAUS 1.5 SEKUNDER]
+
+Den första och mest kritiska svagheten är begränsad marknadsbevisning.
+
+[PAUS 1 SEKUND]
+
+Dokumentationen innehåller inga verifierbara kundcase eller referenskunder. Inga namngivna företag som har implementerat plattformen.
+
+[PAUS 1 SEKUND]
+
+Påståenden om 35 procent återvinningsökning saknar transparent källhänvisning.
+
+[PAUS 1.5 SEKUNDER]
+
+Den andra svagheten rör resurskrav för marknadsutbildning.
+
+[PAUS 1 SEKUND]
+
+Att flytta en hel bransch från en etablerad provisionsmodell till en prenumerationsbaserad modell kräver omfattande change management och kundutbildning.
+
+[PAUS 1.5 SEKUNDER]
+
+Den tredje svagheten är den initiala geografiska begränsningen.
+
+[PAUS 1 SEKUND]
+
+Fokus ligger på den svenska marknaden, värderad till 440 komma 3 miljoner euro. Detta är relativt litet jämfört med den globala potentialen.
+
+[PAUS 1 SEKUND]
+
+Ingen dokumenterad expansion till övriga Norden eller Europa finns än.
+
+[PAUS 1.5 SEKUNDER]
+
+Den fjärde svagheten är informationsluckor i dokumentationen.
+
+[PAUS 1 SEKUND]
+
+Ingen prissättningsinformation trots att fast abonnemang nämns. Saknar detaljerad teknisk arkitekturbeskrivning av L L M-implementationen. Inga finansiella prognoser eller information om teamstorlek dokumenterad.
+
+[PAUS 2 SEKUNDER]
+
+Dessa svagheter är inte ogenomträngliga hinder, men de måste adresseras för framgångsrik marknadspenetration.
+
+[SLUT]
+
+---
+TEKNISKA INSTRUKTIONER FÖR ELEVENLABS:
+- Röst: Balanserad, ärlig, analytisk
+- Stil: Konstruktiv kritik utan negativitet
+- Tempo: Medelhastighet, eftertänksam
+- Betoning på: "begränsad marknadsbevisning", "440 komma 3 miljoner", "informationsluckor"
+- Akronymer: LLM (L-L-M)
+- Ton: Professionell men inte defensiv
+- Längd: Ca 90-100 sekunder

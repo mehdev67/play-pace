@@ -1,0 +1,39 @@
+SLIDE 3: ICP - IDEAL CUSTOMER PROFILE
+======================================
+
+[ANALYTISK, PROFESSIONELL TON]
+
+Sektion ett: Ideal Customer Profile.
+
+[PAUS 1 SEKUND]
+
+Inkasseras primära målgrupp är medelstora till stora företag och Enterprise-kunder inom finansiella institutioner, telekomoperatörer och e-handelsföretag.
+
+[PAUS 1 SEKUND]
+
+Dessa organisationer kännetecknas av höga volymer utestående fordringar och har etablerade E R P- och C R M-system med A P I-infrastruktur.
+
+[PAUS 1.5 SEKUNDER]
+
+De viktigaste beslutsfattarna är ekonomichefer, kreditchefer, finansiella controllers och, allt viktigare, compliance-ansvariga.
+
+[PAUS 1 SEKUND]
+
+Detta eftersom Finansinspektionens nya föreskrifter, F F F S 2025 kolon 2, träder i kraft den första juli 2025.
+
+[PAUS 1.5 SEKUNDER]
+
+Dessa beslutsfattare söker lösningar som kombinerar kostnadskontroll med garanterad regelefterlevnad.
+
+[PAUS 2 SEKUNDER]
+
+[SLUT]
+
+---
+TEKNISKA INSTRUKTIONER FÖR ELEVENLABS:
+- Röst: Professionell, analytisk
+- Stil: Informativ, faktabaserad
+- Tempo: Medelhastighet med tydlig artikulation
+- Betoning på: "Enterprise-kunder", "compliance-ansvariga", "första juli 2025"
+- Akronymer: Stava ut ERP (E-R-P), CRM (C-R-M), API (A-P-I), FFFS (F-F-F-S)
+- Längd: Ca 55-60 sekunder

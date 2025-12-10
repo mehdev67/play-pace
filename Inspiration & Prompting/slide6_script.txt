@@ -1,0 +1,45 @@
+SLIDE 6: SWOT-ANALYS - ÖVERSIKT
+================================
+
+[STRATEGISK, SAMMANFATTANDE TON]
+
+Vi går nu över till sektion två: SWOT-analysen.
+
+[PAUS 1.5 SEKUNDER]
+
+SWOT står för Strengths, Weaknesses, Opportunities och Threats. På svenska: Styrkor, Svagheter, Möjligheter och Hot.
+
+[PAUS 1 SEKUND]
+
+Låt oss börja med en snabb översikt.
+
+[PAUS 1.5 SEKUNDER]
+
+Styrkor: Inkassera har en disruptiv affärsmodell med 99 komma 9 procent compliance, 8 gånger snabbare processer och en modulär L L M-arkitektur.
+
+[PAUS 1.5 SEKUNDER]
+
+Svagheter: Begränsad marknadsbevisning, initialt geografiskt fokus på Sverige och vissa informationsluckor i dokumentationen.
+
+[PAUS 1.5 SEKUNDER]
+
+Möjligheter: F F F S 2025 kolon 2 utgör en regulatorisk katalysator. A I-inkassomarknaden växer med 16 komma 9 procent årligen. Horizontal expansion till K Y C och A M L är möjlig.
+
+[PAUS 1.5 SEKUNDER]
+
+Hot: Konkurrens från etablerade aktörer som Intrum och Lowell, osäkerhet kring A I Act-implementering, teknisk disruption och potentiell prispress.
+
+[PAUS 2 SEKUNDER]
+
+Låt oss nu gå djupare in på varje kategori, börjar med styrkorna.
+
+[SLUT]
+
+---
+TEKNISKA INSTRUKTIONER FÖR ELEVENLABS:
+- Röst: Strategisk, sammanfattande
+- Stil: Balanserad presentation av alla fyra SWOT-element
+- Tempo: Jämn takt, tydliga pauser mellan kategorier
+- Betoning på: "99 komma 9 procent", "8 gånger", "16 komma 9 procent"
+- Akronymer: SWOT (bokstavera), LLM (L-L-M), FFFS (F-F-F-S), AI (A-I), KYC (K-Y-C), AML (A-M-L)
+- Längd: Ca 75-80 sekunder

@@ -1,0 +1,58 @@
+SLIDE 11: USP - UNIKHET & VÄRDEERBJUDANDE
+==========================================
+
+[KRAFTFULL, ÖVERTYGANDE TON]
+
+Vi går nu över till sektion tre: Unikhet och värdeerbjudande.
+
+[PAUS 1.5 SEKUNDER]
+
+Här är kärnfrågan: Hur gör Inkassera det unikt?
+
+[PAUS 2 SEKUNDER]
+
+Inkassera är den första A I-drivna inkassoplattformen i Norden som fundamentalt utmanar den provisionsbaserade affärsmodellen.
+
+[PAUS 1 SEKUND]
+
+Istället erbjuder de inkasso som en fast, förutsägbar SaaS-tjänst med noll procent provision på återvunna medel.
+
+[PAUS 2 SEKUNDER]
+
+Men här kommer den avgörande insikten: Inkasseras främsta unika fördel är inte teknologin i sig.
+
+[PAUS 1 SEKUND]
+
+Det är hur affärsmodellen radikalt omfördelar värdet.
+
+[PAUS 2 SEKUNDER]
+
+Låt mig illustrera detta.
+
+[PAUS 1 SEKUND]
+
+Traditionell modell: Borgenären betalar 15 till 30 procent av återvunnet belopp i provision, plus tar regressrisk på obetalda skulder.
+
+[PAUS 2 SEKUNDER]
+
+Inkassera-modellen: Fast månadsavgift. Noll procent provision. Noll procent regressrisk. Hundra procent av återvinningen går till borgenären.
+
+[PAUS 2 SEKUNDER]
+
+Resultatet? 35 till 50 procent lägre Total Cost of Ownership.
+
+[PAUS 2 SEKUNDER]
+
+Detta är inte en marginalförbättring. Detta är en fundamental omskrivning av inkassons ekonomi.
+
+[SLUT]
+
+---
+TEKNISKA INSTRUKTIONER FÖR ELEVENLABS:
+- Röst: Kraftfull, övertygande, nästan inspirerande
+- Stil: Storytelling med stark kontrast mellan "traditionell" och "Inkassera"
+- Tempo: Medelhastighet med dramatiska pauser vid nyckelpoänger
+- Betoning på: "första AI-drivna", "noll procent", "hundra procent", "fundamental omskrivning"
+- Akronymer: AI (A-I), SaaS (Säg "SaaS"), USP (U-S-P)
+- Ton: Confident pitch
+- Längd: Ca 80-90 sekunder

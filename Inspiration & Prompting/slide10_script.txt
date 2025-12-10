@@ -1,0 +1,74 @@
+SLIDE 10: SWOT - THREATS (HOT)
+===============================
+
+[ALLVARLIG, VAKSAM TON]
+
+Men varje marknadsmöjlighet kommer också med hot. Låt oss vara ärliga om riskerna.
+
+[PAUS 1.5 SEKUNDER]
+
+Det första hotet är regulatorisk osäkerhet.
+
+[PAUS 1 SEKUND]
+
+Om Inkasseras system klassificeras som högrisk A I under A I Act kan kraven på mänsklig tillsyn bli mer omfattande än förväntat.
+
+[PAUS 1 SEKUND]
+
+Finansinspektionens tolkning av god inkassosed för A I-system är ännu inte fullt klarlagd.
+
+[PAUS 1 SEKUND]
+
+Och det är oklart om Inkasseras SaaS-modell påverkar kundens tillståndsplikt hos F I.
+
+[PAUS 2 SEKUNDER]
+
+Det andra hotet är konkurrens från etablerade aktörer.
+
+[PAUS 1 SEKUND]
+
+Intrum har accelererat sin A I-transformation under 2024 och fokuserar på att bli ett teknikdrivet företag.
+
+[PAUS 1 SEKUND]
+
+Lowell Group har redan migrerat sin kärnplattform till en SaaS-modell genom Tietoevry Collection Suite Nova.
+
+[PAUS 1 SEKUND]
+
+PAIR Finance i Tyskland har arbetat med avancerad A I-inkasso sedan 2018, med reinforcement learning och natural language processing.
+
+[PAUS 1.5 SEKUNDER]
+
+Det tredje hotet är teknisk disruption och prispress.
+
+[PAUS 1 SEKUND]
+
+L L M-teknologi utvecklas extremt snabbt. Dagens lösningar kan bli föråldrade.
+
+[PAUS 1 SEKUND]
+
+Open source A I-modeller kan sänka inträdesbarriärer för nya konkurrenter.
+
+[PAUS 1 SEKUND]
+
+Större tech-företag som Microsoft, Google och Salesforce kan enkelt addera inkassofunktionalitet till sina E R P- och C R M-plattformar.
+
+[PAUS 1.5 SEKUNDER]
+
+Om flera aktörer flyttar till SaaS-modell riskerar vi en race to the bottom på prissättning.
+
+[PAUS 2 SEKUNDER]
+
+Dessa hot är verkliga, men många kan också ses som valideringen av Inkasseras marknadsvision.
+
+[SLUT]
+
+---
+TEKNISKA INSTRUKTIONER FÖR ELEVENLABS:
+- Röst: Allvarlig, balanserad, vaksam
+- Stil: Riskbedömning utan alarmism
+- Tempo: Medelhastighet, eftertänksam
+- Betoning på: "högrisk AI", "SaaS-modell", "race to the bottom"
+- Akronymer: AI (A-I), FI (F-I), SaaS (Säg "SaaS" som engelska), LLM (L-L-M), ERP (E-R-P), CRM (C-R-M)
+- Ton: Professionell riskanalys
+- Längd: Ca 100-110 sekunder

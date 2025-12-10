@@ -1,0 +1,61 @@
+SLIDE 4: ICP - SPECIFIKA PROBLEM SOM LÖSES
+===========================================
+
+[PROBLEMFOKUSERAD, EMPATISK TON]
+
+Vilka konkreta problem löser Inkassera för denna målgrupp?
+
+[PAUS 1 SEKUND]
+
+För det första, ekonomiska förluster. Traditionella inkassobolag tar 15 till 30 procent i avgifter.
+
+[PAUS 0.5 SEKUNDER]
+
+Inkasseras lösning? Fast månadsabonnemang med noll procent provision.
+
+[PAUS 0.5 SEKUNDER]
+
+Resultatet: 35 till 50 procent lägre Total Cost of Ownership.
+
+[PAUS 1.5 SEKUNDER]
+
+För det andra, regressrisk. Med traditionella metoder blir obetalda skulder borgenärens förlust.
+
+[PAUS 0.5 SEKUNDER]
+
+Inkassera eliminerar detta helt. Noll procent regressrisk genom plattformsägande.
+
+[PAUS 0.5 SEKUNDER]
+
+Resultatet: Hundra procent förutsägbara driftskostnader.
+
+[PAUS 1.5 SEKUNDER]
+
+För det tredje, kassaflödeshastighet. Branschgenomsnittet ligger på över 45 dagars fördröjning.
+
+[PAUS 0.5 SEKUNDER]
+
+Inkassera levererar 8 gånger snabbare processcykeltid genom A I-automatisering.
+
+[PAUS 1.5 SEKUNDER]
+
+För det fjärde, regelefterlevnad. Manuella processer skapar compliance-risker.
+
+[PAUS 0.5 SEKUNDER]
+
+Inkassera garanterar 99 komma 9 procent automatisk regelefterlevnad, färdig för F F F S 2025 kolon 2.
+
+[PAUS 2 SEKUNDER]
+
+Dessa fyra problemområden utgör kärnsmärtpunkterna för Inkasseras målgrupp.
+
+[SLUT]
+
+---
+TEKNISKA INSTRUKTIONER FÖR ELEVENLABS:
+- Röst: Problemlösande, övertygande
+- Stil: Rytmisk uppräkning (problem → lösning → resultat)
+- Tempo: Medel till snabbt på siffror, långsammare på "resultat"
+- Betoning på: Alla procentsiffror och tidsmått
+- Akronymer: AI (A-I), FFFS (F-F-F-S)
+- Längd: Ca 75-85 sekunder
