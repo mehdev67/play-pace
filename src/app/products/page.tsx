@@ -28,7 +28,7 @@ const products = [
             "Customizable voice",
             "Detailed analytics",
         ],
-        price: "From $99/month",
+
         gradient: "from-cyan-500 to-blue-500",
         popular: true,
     },
@@ -47,7 +47,7 @@ const products = [
             "Searchable database",
             "Compliance support",
         ],
-        price: "From $49/month",
+
         gradient: "from-purple-500 to-pink-500",
         popular: false,
     },
@@ -66,7 +66,7 @@ const products = [
             "Content scheduling",
             "Analytics dashboard",
         ],
-        price: "From $79/month",
+
         gradient: "from-emerald-500 to-teal-500",
         popular: false,
     },
@@ -87,9 +87,9 @@ export default function ProductsPage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center mb-16"
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-6">
-                        <Sparkles className="w-4 h-4 text-cyan-400" />
-                        <span className="text-sm text-cyan-400 font-medium">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1700f7]/5 border border-[#6effc5]/20 backdrop-blur-md shadow-[0_0_15px_-3px_rgba(110,255,197,0.3)] mb-6 transition-all duration-300 hover:scale-105 hover:bg-[#1700f7]/10 hover:border-[#6effc5]/40 hover:shadow-[0_0_20px_-3px_rgba(110,255,197,0.5)]">
+                        <Sparkles className="w-4 h-4 text-[#6effc5]" strokeWidth={1.5} />
+                        <span className="text-sm font-medium text-[#6effc5]">
                             AI Products
                         </span>
                     </div>
@@ -154,7 +154,7 @@ export default function ProductsPage() {
 
                             {/* Price & CTA */}
                             <div className="mt-auto">
-                                <p className="text-2xl font-bold text-white mb-4">{product.price}</p>
+
                                 <Link
                                     href={`/products/${product.id}`}
                                     className={`w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-medium transition-all ${product.popular
@@ -188,7 +188,7 @@ export default function ProductsPage() {
                         description="Let's build something tailored to your needs. Our team specializes in creating bespoke AI solutions that scale with your business."
                         ctaText="Start Your Project"
                         href="/start-project"
-                        metadata={{ left: "Custom pricing", right: "Free consultation" }}
+                        metadata={{ left: "", right: "Free consultation" }}
                     />
                 </motion.div>
             </div>

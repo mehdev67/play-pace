@@ -1,9 +1,13 @@
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
 import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ClientLayoutWrapper from "@/components/ClientLayoutWrapper"; // Import the new wrapper
 import OceanBackground from "@/components/OceanBackground";
+import { Toaster } from "@/components/ui/toaster";
+import SupportChat from "@/components/SupportChat";
 
 
 export const metadata: Metadata = {
@@ -42,19 +46,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="antialiased">
+    <html lang="en" className={`dark ${GeistSans.variable} ${GeistMono.variable}`}>
+      <body className="antialiased font-sans">
         <ClientLayoutWrapper> {/* Use the wrapper here */}
           <OceanBackground />
           <Navigation />
           <main>{children}</main>
           <Footer />
+          <Toaster />
+          <SupportChat />
         </ClientLayoutWrapper>
       </body>
     </html>

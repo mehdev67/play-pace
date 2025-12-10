@@ -113,9 +113,9 @@ export default function AboutPage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center"
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 mb-6">
-                        <Sparkles className="w-4 h-4 text-purple-400" />
-                        <span className="text-sm text-purple-400 font-medium">About PlayPace</span>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#8656ff]/5 border border-[#ff5145]/20 backdrop-blur-md shadow-[0_0_15px_-3px_rgba(134,86,255,0.3)] mb-6 transition-all duration-300 hover:scale-105 hover:bg-[#8656ff]/10 hover:border-[#ff5145]/40 hover:shadow-[0_0_20px_-3px_rgba(134,86,255,0.5)]">
+                        <Sparkles className="w-4 h-4 text-[#ff5145]" strokeWidth={1.5} />
+                        <span className="text-sm font-medium text-[#d4bfff]">About PlayPace</span>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">

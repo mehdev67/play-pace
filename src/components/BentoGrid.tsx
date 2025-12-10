@@ -31,10 +31,10 @@ export default function BentoGrid() {
                     transition={{ delay: 0.1 }}
                     className="md:col-span-2 row-span-1 relative group overflow-hidden rounded-3xl"
                 >
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-blue-500/10 backdrop-blur-xl border border-white/10 p-8 flex flex-col justify-between h-full transition-all duration-500 group-hover:border-purple-500/30">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#8656ff]/10 to-[#1700f7]/10 backdrop-blur-xl border border-white/10 p-8 flex flex-col justify-between h-full transition-all duration-500 group-hover:border-[#8656ff]/30">
                         <div className="relative z-10">
-                            <div className="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center mb-4 transition-transform group-hover:scale-110 duration-500">
-                                <Bot className="w-6 h-6 text-purple-400" />
+                            <div className="w-12 h-12 rounded-xl bg-[#8656ff]/20 flex items-center justify-center mb-4 transition-transform group-hover:scale-110 duration-500">
+                                <Bot className="w-6 h-6 text-[#8656ff]" />
                             </div>
                             <h3 className="text-2xl font-bold text-white mb-2">AI Agents & Automation</h3>
                             <p className="text-zinc-400 max-w-md">
@@ -44,15 +44,15 @@ export default function BentoGrid() {
 
                         {/* Visual Effect */}
                         <div className="absolute top-1/2 right-4 transform -translate-y-1/2 translate-x-12 opacity-50 group-hover:opacity-80 group-hover:translate-x-4 transition-all duration-700">
-                            <div className="w-48 h-48 rounded-full border border-purple-500/30 flex items-center justify-center animate-[spin_10s_linear_infinite]">
-                                <div className="w-32 h-32 rounded-full border border-blue-500/30 flex items-center justify-center animate-[spin_15s_linear_infinite_reverse]">
-                                    <div className="w-16 h-16 rounded-full bg-purple-500/20 blur-xl animate-pulse"></div>
+                            <div className="w-48 h-48 rounded-full border border-[#8656ff]/30 flex items-center justify-center animate-[spin_10s_linear_infinite]">
+                                <div className="w-32 h-32 rounded-full border border-[#1700f7]/30 flex items-center justify-center animate-[spin_15s_linear_infinite_reverse]">
+                                    <div className="w-16 h-16 rounded-full bg-[#8656ff]/20 blur-xl animate-pulse"></div>
                                 </div>
                             </div>
                         </div>
 
                         <div className="relative z-10">
-                            <Link href="/developing" className="inline-flex items-center gap-2 text-sm font-medium text-purple-400 hover:text-purple-300 transition-colors">
+                            <Link href="/developing" className="inline-flex items-center gap-2 text-sm font-medium text-[#8656ff] hover:text-[#a17fff] transition-colors">
                                 View Services <ArrowRight className="w-4 h-4" />
                             </Link>
                         </div>
@@ -67,13 +67,13 @@ export default function BentoGrid() {
                     transition={{ delay: 0.2 }}
                     className="md:col-span-1 row-span-2 relative group overflow-hidden rounded-3xl"
                 >
-                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-teal-500/10 backdrop-blur-xl border border-white/10 p-8 flex flex-col h-full transition-all duration-500 group-hover:border-cyan-500/30">
-                        <div className="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center mb-4 flex-shrink-0">
-                            <Code className="w-6 h-6 text-cyan-400" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#6effc5]/10 to-[#1700f7]/10 backdrop-blur-xl border border-white/10 p-8 flex flex-col h-full transition-all duration-500 group-hover:border-[#6effc5]/30">
+                        <div className="w-12 h-12 rounded-xl bg-[#6effc5]/20 flex items-center justify-center mb-4 flex-shrink-0">
+                            <Code className="w-6 h-6 text-[#6effc5]" />
                         </div>
                         <div className="flex justify-between items-start mb-2">
                             <h3 className="text-2xl font-bold text-white">Custom Software</h3>
-                            <Link href="/developing" className="p-2 rounded-full bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 transition-colors">
+                            <Link href="/developing" className="p-2 rounded-full bg-[#6effc5]/10 hover:bg-[#6effc5]/20 text-[#6effc5] transition-colors">
                                 <ArrowRight className="w-4 h-4" />
                             </Link>
                         </div>
@@ -110,10 +110,10 @@ export default function BentoGrid() {
                     transition={{ delay: 0.3 }}
                     className="md:col-span-1 row-span-1 relative group overflow-hidden rounded-3xl"
                 >
-                    <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 to-rose-500/10 backdrop-blur-xl border border-white/10 p-8 flex flex-col justify-between transition-all duration-500 group-hover:border-pink-500/30">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#ff5145]/10 to-[#8656ff]/10 backdrop-blur-xl border border-white/10 p-8 flex flex-col justify-between transition-all duration-500 group-hover:border-[#ff5145]/30">
                         <div>
-                            <div className="w-12 h-12 rounded-xl bg-pink-500/20 flex items-center justify-center mb-4">
-                                <Network className="w-6 h-6 text-pink-400" />
+                            <div className="w-12 h-12 rounded-xl bg-[#ff5145]/20 flex items-center justify-center mb-4">
+                                <Network className="w-6 h-6 text-[#ff5145]" />
                             </div>
                             <h3 className="text-xl font-bold text-white mb-2">Seamless Integration</h3>
                             <p className="text-sm text-zinc-400">
@@ -131,10 +131,10 @@ export default function BentoGrid() {
                     transition={{ delay: 0.4 }}
                     className="md:col-span-1 row-span-1 relative group overflow-hidden rounded-3xl"
                 >
-                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-green-500/10 backdrop-blur-xl border border-white/10 p-8 flex flex-col justify-between transition-all duration-500 group-hover:border-emerald-500/30">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#6effc5]/10 to-[#8656ff]/10 backdrop-blur-xl border border-white/10 p-8 flex flex-col justify-between transition-all duration-500 group-hover:border-[#6effc5]/30">
                         <div>
-                            <div className="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center mb-4">
-                                <Cpu className="w-6 h-6 text-emerald-400" />
+                            <div className="w-12 h-12 rounded-xl bg-[#6effc5]/20 flex items-center justify-center mb-4">
+                                <Cpu className="w-6 h-6 text-[#6effc5]" />
                             </div>
                             <h3 className="text-xl font-bold text-white mb-2">Infinite Scale</h3>
                             <p className="text-sm text-zinc-400">

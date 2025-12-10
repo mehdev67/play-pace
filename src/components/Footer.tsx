@@ -94,17 +94,16 @@ export default function Footer() {
                 </div>
 
                 {/* EU Funding Badge */}
-                <div className="glass-card p-6 mb-12">
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-center md:text-left">
-                        <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
-                            <span className="text-2xl">🇪🇺</span>
-                        </div>
-                        <div>
-                            <p className="text-white font-medium">Recognized & Co-funded by the European Union</p>
-                            <p className="text-zinc-400 text-sm">
-                                Pioneering sustainable solutions that empower people, businesses and the planet.
-                            </p>
-                        </div>
+                <div className="relative rounded-2xl overflow-hidden mb-12 bg-gradient-to-r from-[#003399] to-[#002266] border border-blue-400/30">
+                    {/* Stars decoration */}
+                    <div className="absolute top-3 left-4 text-yellow-400/60 text-sm tracking-[0.5em]">★ ★ ★ ★ ★ ★</div>
+                    <div className="absolute bottom-3 right-4 text-yellow-400/60 text-sm tracking-[0.5em]">★ ★ ★ ★ ★ ★</div>
+
+                    <div className="relative p-8 text-center">
+                        <p className="text-white font-semibold text-lg mb-2">Recognized & Co-funded by the European Union</p>
+                        <p className="text-blue-200/80 text-sm max-w-xl mx-auto">
+                            Pioneering sustainable solutions that empower people, businesses and the planet.
+                        </p>
                     </div>
                 </div>
 
@@ -113,10 +112,6 @@ export default function Footer() {
                     <p className="text-zinc-500 text-sm">
                         © 2025 Playpace Brand & Business Services AB. All rights reserved.
                     </p>
-                    <div className="flex items-center gap-2 text-zinc-500 text-sm">
-                        <span>Powered by</span>
-                        <span className="text-white font-medium">Google Cloud</span>
-                    </div>
                 </div>
             </div>
         </footer>

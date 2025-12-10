@@ -1,5 +1,6 @@
 "use client";
 
+
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Sparkles, Zap, Bot } from "lucide-react";
@@ -90,7 +91,7 @@ export default function Hero() {
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </span>
                     </Link>
-                    <Link href="/products" className="btn-ghost relative group">
+                    <Link href="/products" className="relative group px-6 py-3 font-semibold text-zinc-300 hover:text-white transition-colors">
                         <span className="flex items-center gap-2">
                             AI Products
                             <motion.span
@@ -133,7 +134,7 @@ export default function Hero() {
                             key={i}
                             className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10"
                         >
-                            <item.icon className="w-4 h-4 text-cyan-400" />
+                            <item.icon className="w-4 h-4 text-cyan-400" strokeWidth={1.5} />
                             <span className="text-sm text-zinc-300">{item.label}</span>
                         </div>
                     ))}
@@ -144,7 +145,7 @@ export default function Hero() {
             </div>
 
             {/* Bottom Gradient Fade */}
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#030014] to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#010409] to-transparent" />
         </section>
     );
 }

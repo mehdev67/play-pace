@@ -4,13 +4,14 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Code, Package } from "lucide-react";
+import { Menu, X, Code, Package, MessageSquare } from "lucide-react";
 
 const navItems = [
     { name: "Home", href: "/" },
     { name: "Build / Develop", href: "/developing", icon: Code },
     { name: "AI Products", href: "/products", icon: Package },
     { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact", icon: MessageSquare },
 ];
 
 export default function Navigation() {

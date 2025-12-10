@@ -7,13 +7,12 @@ import {
     CheckCircle,
     ArrowRight,
     Sparkles,
-    Bot,
-    Workflow,
-    Database,
-    Cpu,
-    Zap,
-    Code,
-    Network,
+    Headphones,
+    Cog,
+    RefreshCw,
+    FileSearch,
+    Plug,
+    Rocket,
 } from "lucide-react";
 import NextImage from "next/image";
 
@@ -37,6 +36,7 @@ const services = [
         gradient: "from-purple-500 to-pink-500",
         popular: true,
         isImage: true,
+        exploreLink: "/developing/ai-agents",
     },
     {
         id: "ai-software",
@@ -100,32 +100,32 @@ const services = [
 
 const useCases = [
     {
-        icon: Bot,
+        icon: Headphones,
         title: "Customer Service",
         description: "Respond instantly, 24/7",
     },
     {
-        icon: Workflow,
+        icon: Cog,
         title: "Operations",
         description: "Eliminate manual data entry",
     },
     {
-        icon: Database,
+        icon: RefreshCw,
         title: "Data Sync",
         description: "No more copy-pasting",
     },
     {
-        icon: Cpu,
+        icon: FileSearch,
         title: "Processing",
         description: "Analyze thousands of docs",
     },
     {
-        icon: Network,
+        icon: Plug,
         title: "Connectivity",
         description: "Unified tech ecosystem",
     },
     {
-        icon: Code,
+        icon: Rocket,
         title: "Development",
         description: "Faster time to market",
     },
@@ -146,16 +146,16 @@ export default function DevelopingPage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center mb-16"
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 mb-6">
-                        <Sparkles className="w-4 h-4 text-purple-400" />
-                        <span className="text-sm text-purple-400 font-medium">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#8656ff]/5 border border-[#6effc5]/20 backdrop-blur-md shadow-[0_0_15px_-3px_rgba(134,86,255,0.3)] mb-6 transition-all duration-300 hover:scale-105 hover:bg-[#8656ff]/10 hover:border-[#6effc5]/40 hover:shadow-[0_0_20px_-3px_rgba(134,86,255,0.5)]">
+                        <Sparkles className="w-4 h-4 text-[#6effc5]" strokeWidth={1.5} />
+                        <span className="text-sm font-medium text-[#d4bfff]">
                             Build / Develop
                         </span>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-                        Stop Building.{" "}
-                        <span className="gradient-text">Start Automating.</span>
+                        Build Smarter.{" "}
+                        <span className="gradient-text">Develop Faster.</span>
                     </h1>
                     <p className="text-lg text-zinc-400 max-w-3xl mx-auto">
                         Your talented team is wasting time on robot work. We build the AI infrastructure that frees them to do what they do best.
@@ -170,7 +170,7 @@ export default function DevelopingPage() {
                             initial={{ opacity: 0, y: 40 }}
                             animate={isInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ delay: i * 0.1, duration: 0.5 }}
-                            className={`relative glass-card p-8 ${service.popular ? "ring-2 ring-purple-500/50" : ""}`}
+                            className={`relative glass-card p-8 flex flex-col h-full ${service.popular ? "ring-2 ring-purple-500/50" : ""}`}
                         >
                             {service.popular && (
                                 <div className="absolute top-4 right-4">
@@ -211,18 +211,27 @@ export default function DevelopingPage() {
                             </ul>
 
                             {/* Price & CTA */}
-                            <div className="mt-auto">
-
-                                <Link
-                                    href="/start-project"
-                                    className={`w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-medium transition-all ${service.popular
-                                        ? "btn-gradient"
-                                        : "bg-white/5 border border-white/10 text-white hover:bg-white/10"
-                                        }`}
-                                >
-                                    <span>Get Started</span>
-                                    <ArrowRight className="w-4 h-4" />
-                                </Link>
+                            <div className="mt-auto space-y-3">
+                                {service.exploreLink ? (
+                                    <Link
+                                        href={service.exploreLink}
+                                        className="w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-medium transition-all btn-gradient"
+                                    >
+                                        <span>Explore</span>
+                                        <ArrowRight className="w-4 h-4" />
+                                    </Link>
+                                ) : (
+                                    <Link
+                                        href="/start-project"
+                                        className={`w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-medium transition-all ${service.popular
+                                            ? "btn-gradient"
+                                            : "bg-white/5 border border-white/10 text-white hover:bg-white/10"
+                                            }`}
+                                    >
+                                        <span>Get Started</span>
+                                        <ArrowRight className="w-4 h-4" />
+                                    </Link>
+                                )}
                             </div>
                         </motion.div>
                     ))}
