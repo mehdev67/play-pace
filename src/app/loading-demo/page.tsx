@@ -8,7 +8,7 @@ export default function LoadingDemoPage() {
     const [showLoading, setShowLoading] = useState(true);
 
     return (
-        <div className="min-h-screen pt-32 pb-20">
+        <div className="min-h-screen pt-16 sm:pt-24 pb-16 sm:pb-20">
             
 
             {showLoading && <LoadingScreen onComplete={() => setShowLoading(false)} />}

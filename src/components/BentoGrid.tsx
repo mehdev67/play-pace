@@ -14,7 +14,7 @@ export default function BentoGrid() {
                     viewport={{ once: true }}
                     className="text-3xl sm:text-4xl font-bold text-white mb-4"
                 >
-                    Designed for <span className="gradient-text">Hyper-Growth</span>
+                    Designed for <span className="gradient-text">Hyper Growth</span>
                 </motion.h2>
                 <p className="text-zinc-400 max-w-2xl mx-auto">
                     Everything you need to scale your operations with AI and intelligent software.
@@ -37,7 +37,7 @@ export default function BentoGrid() {
                             </div>
                             <h3 className="text-2xl font-bold text-white mb-2">AI Agents & Automation</h3>
                             <p className="text-zinc-400 max-w-md">
-                                Deploy intelligent agents that work 24/7. From customer support to data processing, we automate the boring stuff so you can focus on building.
+                                Deploy intelligent agents that work around the clock. From customer support to data processing, we automate the repetitive tasks so you can focus on building.
                             </p>
                         </div>
 

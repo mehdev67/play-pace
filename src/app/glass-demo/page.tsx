@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function GlassDemo() {
     return (
-        <div className="min-h-screen flex items-center justify-center p-8 pt-32">
+        <div className="min-h-screen flex items-center justify-center p-6 pt-16 sm:pt-24">
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
                 <GlassCard

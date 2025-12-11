@@ -52,8 +52,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`dark ${GeistSans.variable} ${GeistMono.variable} ${greatVibes.variable}`}>
-      <body className="antialiased font-sans">
+    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable} ${greatVibes.variable}`}>
+      <body className="antialiased font-sans" style={{
+        background: "radial-gradient(ellipse at center, #f1f1f1 0%, #e5e5e5 70%, #d4d4d4 100%)",
+        minHeight: "100vh",
+        color: "#27272a"
+      }}>
         <ClientLayoutWrapper> {/* Use the wrapper here */}
           <Navigation />
           <main>{children}</main>

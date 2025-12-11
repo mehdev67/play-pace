@@ -121,8 +121,8 @@ const agents = [
 
 export default function AIAgentsPage() {
     return (
-        <div className="min-h-screen pt-32 pb-20">
-            
+        <div className="min-h-screen pt-16 sm:pt-24 pb-16 sm:pb-20">
+
 
             <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
                 {/* Header */}
@@ -166,12 +166,6 @@ export default function AIAgentsPage() {
                             >
                                 {/* Icon */}
                                 <div className="relative mb-6 group/icon">
-                                    {/* Glow effect behind */}
-                                    <div
-                                        className="absolute inset-0 rounded-full blur-2xl opacity-40 group-hover/icon:opacity-70 transition-opacity duration-500 scale-150"
-                                        style={{ backgroundColor: agent.color }}
-                                    />
-
                                     {/* Floating animation wrapper */}
                                     <div
                                         className="relative w-16 h-16 rounded-2xl flex items-center justify-center animate-[float_3s_ease-in-out_infinite] transition-transform duration-300 group-hover:scale-110"

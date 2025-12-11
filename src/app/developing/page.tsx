@@ -15,6 +15,7 @@ import {
     Rocket,
 } from "lucide-react";
 import NextImage from "next/image";
+import { GlassCard } from "react-glass-ui";
 
 const services = [
     {
@@ -37,6 +38,7 @@ const services = [
         popular: true,
         isImage: true,
         exploreLink: "/developing/ai-agents",
+        accentColor: "purple",
     },
     {
         id: "ai-software",
@@ -56,6 +58,7 @@ const services = [
         gradient: "from-blue-500 to-cyan-500",
         popular: false,
         isImage: true,
+        accentColor: "cyan",
     },
     {
         id: "automation",
@@ -75,6 +78,7 @@ const services = [
         gradient: "from-orange-500 to-red-500",
         popular: false,
         isImage: true,
+        accentColor: "orange",
     },
     {
         id: "api-bridges",
@@ -95,6 +99,7 @@ const services = [
         gradient: "from-green-500 to-emerald-500",
         popular: false,
         isImage: true,
+        accentColor: "emerald",
     },
 ];
 
@@ -136,8 +141,8 @@ export default function DevelopingPage() {
     const isInView = useInView(ref, { once: true, margin: "-100px" });
 
     return (
-        <div className="min-h-screen pt-32 pb-20">
-            
+        <div className="min-h-screen pt-16 sm:pt-24 pb-16 sm:pb-20">
+
 
             <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
                 {/* Header */}
@@ -146,18 +151,18 @@ export default function DevelopingPage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center mb-16"
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#8656ff]/5 border border-[#6effc5]/20 backdrop-blur-md shadow-[0_0_15px_-3px_rgba(134,86,255,0.3)] mb-6 transition-all duration-300 hover:scale-105 hover:bg-[#8656ff]/10 hover:border-[#6effc5]/40 hover:shadow-[0_0_20px_-3px_rgba(134,86,255,0.5)]">
-                        <Sparkles className="w-4 h-4 text-[#6effc5]" strokeWidth={1.5} />
-                        <span className="text-sm font-medium text-[#d4bfff]">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-600/5 border border-purple-600/10 backdrop-blur-md mb-6 transition-all duration-300 hover:scale-105">
+                        <Sparkles className="w-4 h-4 text-purple-600" strokeWidth={1.5} />
+                        <span className="text-sm font-medium text-purple-600">
                             Build / Develop
                         </span>
                     </div>
 
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-900 mb-6">
                         Build Smarter.{" "}
                         <span className="gradient-text">Develop Faster.</span>
                     </h1>
-                    <p className="text-lg text-zinc-400 max-w-3xl mx-auto">
+                    <p className="text-lg text-zinc-600 max-w-3xl mx-auto">
                         Your talented team is wasting time on robot work. We build the AI infrastructure that frees them to do what they do best.
                     </p>
                 </motion.div>
@@ -170,75 +175,84 @@ export default function DevelopingPage() {
                             initial={{ opacity: 0, y: 40 }}
                             animate={isInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ delay: i * 0.1, duration: 0.5 }}
-                            className={`relative glass-card p-8 flex flex-col h-full ${service.popular ? "ring-2 ring-purple-500/50" : ""}`}
                         >
-                            {service.popular && (
-                                <div className="absolute top-4 right-4">
-                                    <span className="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30 text-xs font-semibold shadow-[0_0_15px_rgba(168,85,247,0.3)]">
-                                        Most Popular
-                                    </span>
-                                </div>
-                            )}
-
-                            {/* Icon */}
-                            <div className="relative mb-8 group/icon">
-                                {/* Glow effect behind */}
-                                <div className={`absolute inset-0 rounded-full bg-gradient-to-r ${service.gradient} blur-2xl opacity-30 group-hover/icon:opacity-60 transition-opacity duration-500 scale-75`} />
-
-                                {/* Floating animation wrapper */}
-                                <div className="relative animate-[float_3s_ease-in-out_infinite]">
-                                    <NextImage
-                                        src={service.icon}
-                                        alt={service.title}
-                                        width={160}
-                                        height={160}
-                                        className="w-32 h-32 drop-shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:scale-110 hover:drop-shadow-[0_0_40px_rgba(255,255,255,0.5)] transition-all duration-500"
-                                    />
-                                </div>
-                            </div>
-
-                            {/* Content */}
-                            <h3 className="text-2xl font-bold text-white mb-2">
-                                {service.title}
-                            </h3>
-                            <p className="text-purple-400 font-medium mb-4">{service.tagline}</p>
-                            <p className="text-zinc-400 mb-6 leading-relaxed">
-                                {service.description}
-                            </p>
-
-                            {/* Features */}
-                            <ul className="space-y-3 mb-8">
-                                {service.features.map((feature) => (
-                                    <li key={feature} className="flex items-center gap-3 text-zinc-300">
-                                        <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                                        {feature}
-                                    </li>
-                                ))}
-                            </ul>
-
-                            {/* Price & CTA */}
-                            <div className="mt-auto space-y-3">
-                                {service.exploreLink ? (
-                                    <Link
-                                        href={service.exploreLink}
-                                        className="w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-medium transition-all btn-gradient"
-                                    >
-                                        <span>Explore</span>
-                                        <ArrowRight className="w-4 h-4" />
-                                    </Link>
-                                ) : (
-                                    <Link
-                                        href="/start-project"
-                                        className={`w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-medium transition-all ${service.popular
-                                            ? "btn-gradient"
-                                            : "bg-white/5 border border-white/10 text-white hover:bg-white/10"
-                                            }`}
-                                    >
-                                        <span>Get Started</span>
-                                        <ArrowRight className="w-4 h-4" />
-                                    </Link>
+                            <GlassCard
+                                blur={12}
+                                borderRadius={24}
+                                borderOpacity={0}
+                                backgroundColor="#ffffff"
+                                backgroundOpacity={0.4}
+                                onHoverScale={1.02}
+                                className={`p-6 sm:p-8 flex flex-col items-center text-center h-full border shadow-sm ring-1 ring-${service.accentColor}-500/20 border-${service.accentColor}-200/50 hover:ring-${service.accentColor}-500/50 transition-all duration-300`}
+                            >
+                                {service.popular && (
+                                    <div className="mb-6">
+                                        <span className={`px-3 py-1 rounded-full bg-${service.accentColor}-500/10 text-${service.accentColor}-600 border border-${service.accentColor}-500/20 text-xs font-semibold shadow-sm`}>
+                                            Most Popular
+                                        </span>
+                                    </div>
                                 )}
-                            </div>
+
+                                {/* Icon / Image */}
+                                <div className="mb-6 flex justify-center w-full">
+                                    {service.isImage ? (
+                                        <div className="relative animate-[float_3s_ease-in-out_infinite]">
+                                            <NextImage
+                                                src={service.icon as string}
+                                                alt={service.title}
+                                                width={120}
+                                                height={120}
+                                                className="w-24 h-24 object-contain mx-auto"
+                                            />
+                                        </div>
+                                    ) : (
+                                        <div className={`w-14 h-14 rounded-2xl flex items-center justify-center bg-gradient-to-br ${service.gradient} shadow-lg text-white mx-auto`}>
+                                            {/* @ts-ignore */}
+                                            <service.icon className="w-7 h-7" />
+                                        </div>
+                                    )}
+                                </div>
+                                <h3 className="text-2xl font-bold text-zinc-900 mb-2">
+                                    {service.title}
+                                </h3>
+                                <p className="text-purple-600 font-medium mb-4">{service.tagline}</p>
+                                <p className="text-zinc-600 mb-6 leading-relaxed">
+                                    {service.description}
+                                </p>
+
+                                {/* Features */}
+                                <div className="w-full flex justify-center mb-8">
+                                    <ul className="space-y-3 text-left inline-block max-w-full">
+                                        {service.features.map((feature) => (
+                                            <li key={feature} className="flex items-start gap-3 text-zinc-500 text-sm sm:text-base">
+                                                <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                                                <span className="break-words">{feature}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                {/* Price & CTA */}
+                                <div className="mt-auto space-y-3">
+                                    {service.exploreLink ? (
+                                        <Link
+                                            href={service.exploreLink}
+                                            className="w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-medium transition-all btn-gradient"
+                                        >
+                                            <span>Explore</span>
+                                            <ArrowRight className="w-4 h-4" />
+                                        </Link>
+                                    ) : (
+                                        <Link
+                                            href="/start-project"
+                                            className={`w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-medium transition-all text-white shadow-lg bg-gradient-to-r ${service.gradient} hover:shadow-xl hover:scale-[1.02]`}
+                                        >
+                                            <span>Get Started</span>
+                                            <ArrowRight className="w-4 h-4" />
+                                        </Link>
+                                    )}
+                                </div>
+                            </GlassCard>
                         </motion.div>
                     ))}
                 </div>
@@ -251,10 +265,10 @@ export default function DevelopingPage() {
                     className="mb-24"
                 >
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-white mb-4">
+                        <h2 className="text-3xl font-bold text-zinc-900 mb-4">
                             Powering the <span className="gradient-text">Future of Work</span>
                         </h2>
-                        <p className="text-zinc-400 max-w-2xl mx-auto">
+                        <p className="text-zinc-600 max-w-2xl mx-auto">
                             Scalable solutions for businesses ready to grow.
                         </p>
                     </div>
@@ -266,13 +280,22 @@ export default function DevelopingPage() {
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                                 transition={{ delay: 0.5 + i * 0.05 }}
-                                className="glass-card p-4 text-center group hover:bg-white/10"
                             >
-                                <div className="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center mx-auto mb-3 group-hover:bg-purple-500/30 transition-colors">
-                                    <useCase.icon className="w-6 h-6 text-purple-400" />
-                                </div>
-                                <h4 className="font-medium text-white mb-1">{useCase.title}</h4>
-                                <p className="text-sm text-zinc-500">{useCase.description}</p>
+                                <GlassCard
+                                    blur={12}
+                                    borderRadius={16}
+                                    borderOpacity={0}
+                                    backgroundColor="#ffffff"
+                                    backgroundOpacity={0.4}
+                                    onHoverScale={1.05}
+                                    className="p-4 text-center h-full border border-zinc-200 shadow-sm"
+                                >
+                                    <div className="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center mx-auto mb-3">
+                                        <useCase.icon className="w-6 h-6 text-purple-600" />
+                                    </div>
+                                    <h4 className="font-medium text-zinc-900 mb-1">{useCase.title}</h4>
+                                    <p className="text-sm text-zinc-500">{useCase.description}</p>
+                                </GlassCard>
                             </motion.div>
                         ))}
                     </div>
@@ -285,10 +308,10 @@ export default function DevelopingPage() {
                     transition={{ delay: 0.8 }}
                     className="mt-16 text-center"
                 >
-                    <h2 className="text-2xl font-bold text-white mb-4">
+                    <h2 className="text-2xl font-bold text-zinc-900 mb-4">
                         Ready to Automate?
                     </h2>
-                    <p className="text-zinc-400 mb-8">
+                    <p className="text-zinc-600 mb-8">
                         Let's build the systems that build your business.
                     </p>
                     <Link href="/start-project" className="btn-gradient inline-flex">

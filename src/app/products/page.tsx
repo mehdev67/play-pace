@@ -9,16 +9,16 @@ import {
     Sparkles,
 } from "lucide-react";
 import NextImage from "next/image";
-import { GlassCard as LiquidGlassCard, GlassButton } from "react-glass-ui";
+import { GlassCard } from "react-glass-ui";
 
 const products = [
     {
         id: "receptionista",
         icon: "/icons/receptionista.png",
         title: "Receptionista",
-        tagline: "AI-powered receptionist",
+        tagline: "AI-Powered Receptionist",
         description:
-            "Automate your customer service with our intelligent AI receptionist. Takes calls, books meetings and answers questions - around the clock.",
+            "Your always on AI receptionist that revolutionizes how you handle customer interactions. Gia answers calls, schedules appointments, and responds to inquiries with human like precision day or night.",
         features: [
             "24/7 availability",
             "Natural conversation",
@@ -30,44 +30,47 @@ const products = [
 
         gradient: "from-cyan-500 to-blue-500",
         popular: true,
+        accentColor: "cyan",
     },
     {
         id: "notario",
-        icon: "/icons/notario.png",
+        icon: "/icons/Notario2.0.png",
         title: "Notario",
-        tagline: "Smart document AI",
+        tagline: "AI for Email & SMS",
         description:
-            "Automate document review, signing and archiving. Notario uses AI to understand and organize your documents intelligently.",
+            "Your dedicated AI assistant that handles email and SMS communication around the clock. Notario automates responses, manages customer inquiries, and keeps conversations flowing any time of day or night.",
         features: [
-            "Auto categorization",
-            "OCR scanning",
-            "Digital signing",
-            "Secure archiving",
-            "Searchable database",
-            "Compliance support",
+            "24/7 email management",
+            "Smart auto replies",
+            "SMS integration add on",
+            "Natural conversation flow",
+            "Multilingual support",
+            "Detailed analytics",
         ],
 
         gradient: "from-purple-500 to-pink-500",
         popular: false,
+        accentColor: "purple",
     },
     {
         id: "clientscreen",
-        icon: "/icons/clientscreen.png",
+        icon: "/icons/ClientScreen.png",
         title: "ClientScreen",
-        tagline: "AI-driven client onboarding",
+        tagline: "AI Driven Client Onboarding",
         description:
-            "Automated onboarding and client management system. From lead capture to signed contracts and invoices – completely hands-off.",
+            "A complete end to end system that transforms how you bring clients onboard. ClientScreen manages the entire journey from lead arrival to signed contract and invoice all running seamlessly in the background.",
         features: [
-            "Auto lead capture",
-            "AI qualification",
-            "Auto quotes & proposals",
-            "E-sign integration",
-            "Auto invoicing",
-            "CRM integrations",
+            "Automatic lead capture",
+            "AI powered qualification",
+            "Auto generated quotes",
+            "E signature integration",
+            "Automated invoicing",
+            "Native CRM integrations",
         ],
 
         gradient: "from-emerald-500 to-teal-500",
         popular: false,
+        accentColor: "emerald",
     },
 ];
 
@@ -76,8 +79,8 @@ export default function ProductsPage() {
     const isInView = useInView(ref, { once: true, margin: "-100px" });
 
     return (
-        <div className="min-h-screen pt-32 pb-20">
-            
+        <div className="min-h-screen pt-16 sm:pt-24 pb-16 sm:pb-20">
+
 
             <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
                 {/* Header */}
@@ -86,18 +89,18 @@ export default function ProductsPage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center mb-16"
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1700f7]/5 border border-[#6effc5]/20 backdrop-blur-md shadow-[0_0_15px_-3px_rgba(110,255,197,0.3)] mb-6 transition-all duration-300 hover:scale-105 hover:bg-[#1700f7]/10 hover:border-[#6effc5]/40 hover:shadow-[0_0_20px_-3px_rgba(110,255,197,0.5)]">
-                        <Sparkles className="w-4 h-4 text-[#6effc5]" strokeWidth={1.5} />
-                        <span className="text-sm font-medium text-[#6effc5]">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-600/5 border border-blue-600/10 backdrop-blur-md mb-6 transition-all duration-300 hover:scale-105 hover:bg-blue-600/10 hover:border-blue-600/40 hover:shadow-[0_0_20px_-3px_rgba(37,99,235,0.5)]">
+                        <Sparkles className="w-4 h-4 text-blue-600" strokeWidth={1.5} />
+                        <span className="text-sm font-medium text-blue-600">
                             AI Products
                         </span>
                     </div>
 
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-900 mb-6">
                         Ready-to-use{" "}
                         <span className="gradient-text">AI Solutions</span>
                     </h1>
-                    <p className="text-lg text-zinc-400 max-w-3xl mx-auto">
+                    <p className="text-lg text-zinc-600 max-w-3xl mx-auto">
                         Our products are ready to deploy right away. Powerful AI tools
                         that automate and streamline your business operations.
                     </p>
@@ -111,71 +114,69 @@ export default function ProductsPage() {
                             initial={{ opacity: 0, y: 40 }}
                             animate={isInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ delay: i * 0.1, duration: 0.5 }}
-                            className={`relative glass-card p-8 ${product.popular ? "ring-2 ring-cyan-500/50" : ""}`}
                         >
-                            {product.popular && (
-                                <div className="absolute top-4 right-4">
-                                    <span className="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-xs font-semibold shadow-[0_0_15px_rgba(6,182,212,0.3)]">
-                                        Most Popular
-                                    </span>
-                                </div>
-                            )}
-
-                            {/* Icon */}
-                            <div className="relative mb-8 group/icon">
-                                {/* Floating animation wrapper */}
-                                <div className="relative animate-[float_3s_ease-in-out_infinite]">
-                                    <NextImage
-                                        src={product.icon}
-                                        alt={product.title}
-                                        width={160}
-                                        height={160}
-                                        className="w-32 h-32 hover:scale-110 transition-all duration-500"
-                                    />
-                                </div>
-                            </div>
-
-                            {/* Content */}
-                            <h3 className="text-2xl font-bold text-white mb-2 flex items-center gap-3">
-                                {product.title}
-                                {product.id === "receptionista" && (
-                                    <span
-                                        className="px-4 py-1.5 rounded-full bg-gradient-to-r from-[#ff5145]/20 to-[#8656ff]/20 border border-[#ff5145]/40 text-[#ff5145] text-2xl shadow-[0_0_20px_rgba(255,81,69,0.4)] animate-pulse"
-                                        style={{ fontFamily: 'var(--font-great-vibes)' }}
-                                    >
-                                        G<span className="text-lg">ia</span>
-                                    </span>
+                            <GlassCard
+                                blur={12}
+                                borderRadius={24}
+                                borderOpacity={0}
+                                backgroundColor="#ffffff"
+                                backgroundOpacity={0.4}
+                                onHoverScale={1.02}
+                                className={`p-6 sm:p-8 flex flex-col items-center text-center h-full border shadow-sm ring-1 ring-${product.accentColor}-500/20 border-${product.accentColor}-200/50 hover:ring-${product.accentColor}-500/50 transition-all duration-300`}
+                            >
+                                {product.popular && (
+                                    <div className="mb-6">
+                                        <span className={`px-3 py-1 rounded-full bg-${product.accentColor}-500/10 text-${product.accentColor}-600 border border-${product.accentColor}-500/20 text-xs font-semibold shadow-sm`}>
+                                            Most Popular
+                                        </span>
+                                    </div>
                                 )}
-                            </h3>
-                            <p className="text-cyan-400 font-medium mb-4">{product.tagline}</p>
-                            <p className="text-zinc-400 mb-6 leading-relaxed">
-                                {product.description}
-                            </p>
 
-                            {/* Features */}
-                            <ul className="space-y-3 mb-8">
-                                {product.features.map((feature) => (
-                                    <li key={feature} className="flex items-center gap-3 text-zinc-300">
-                                        <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                                        {feature}
-                                    </li>
-                                ))}
-                            </ul>
+                                {/* Icon */}
+                                <div className="relative mb-6 group/icon flex justify-center w-full">
+                                    <div className="relative animate-[float_3s_ease-in-out_infinite]">
+                                        <NextImage
+                                            src={product.icon}
+                                            alt={product.title}
+                                            width={160}
+                                            height={160}
+                                            className="w-32 h-32 object-contain mx-auto hover:scale-110 transition-all duration-500"
+                                        />
+                                    </div>
+                                </div>
 
-                            {/* Price & CTA */}
-                            <div className="mt-auto">
+                                {/* Content */}
+                                <h3 className="text-2xl font-bold text-zinc-900 mb-2 flex items-center justify-center gap-3">
+                                    {product.title}
+                                </h3>
+                                <p className={`text-${product.accentColor}-600 font-medium mb-4`}>{product.tagline}</p>
+                                <p className="text-zinc-600 mb-6 leading-relaxed">
+                                    {product.description}
+                                </p>
 
-                                <Link
-                                    href={`/products/${product.id}`}
-                                    className={`w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-medium transition-all ${product.popular
-                                        ? "btn-gradient"
-                                        : "bg-white/5 border border-white/10 text-white hover:bg-white/10"
-                                        }`}
-                                >
-                                    <span>Get Started</span>
-                                    <ArrowRight className="w-4 h-4" />
-                                </Link>
-                            </div>
+                                {/* Features */}
+                                <div className="w-full flex justify-center mb-8">
+                                    <ul className="space-y-3 text-left inline-block max-w-full">
+                                        {product.features.map((feature) => (
+                                            <li key={feature} className="flex items-start gap-3 text-zinc-500 text-sm sm:text-base">
+                                                <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                                                <span className="break-words">{feature}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                {/* Price & CTA */}
+                                <div className="mt-auto">
+                                    <Link
+                                        href={`/products/${product.id}`}
+                                        className={`w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-medium transition-all text-white shadow-lg bg-gradient-to-r ${product.gradient} hover:shadow-xl hover:scale-[1.02]`}
+                                    >
+                                        <span>Get Started</span>
+                                        <ArrowRight className="w-4 h-4" />
+                                    </Link>
+                                </div>
+                            </GlassCard>
                         </motion.div>
                     ))}
                 </div>
@@ -189,32 +190,32 @@ export default function ProductsPage() {
                     transition={{ delay: 0.8 }}
                     className="mt-16 flex flex-col items-center"
                 >
-                    <h2 className="text-2xl font-bold text-white mb-8 text-center">
+                    <h2 className="text-2xl font-bold text-zinc-900 mb-8 text-center">
                         Need a Custom AI Solution?
                     </h2>
-                    <LiquidGlassCard
+                    <GlassCard
                         width={400}
                         blur={8}
                         distortion={15}
                         borderRadius={20}
-                        borderOpacity={0.3}
-                        backgroundColor="#8656ff"
-                        backgroundOpacity={0.1}
+                        borderOpacity={0}
+                        backgroundColor="#ffffff"
+                        backgroundOpacity={0.4}
                         innerLightBlur={20}
                         innerLightColor="#6effc5"
                         onHoverScale={1.02}
                         flexibility={0.5}
-                        className="p-8 text-center"
+                        className="p-8 text-center border shadow-sm ring-1 ring-purple-500/20 border-purple-200/50 hover:ring-purple-500/50 transition-all duration-300"
                     >
-                        <span className="text-sm text-[#6effc5] font-medium mb-2 block">Enterprise</span>
-                        <h3 className="text-2xl font-bold text-white mb-4">Custom AI Development</h3>
-                        <p className="text-zinc-400 mb-6">
+                        <span className="text-sm text-purple-600 font-medium mb-2 block">Enterprise</span>
+                        <h3 className="text-2xl font-bold text-zinc-900 mb-4">Custom AI Development</h3>
+                        <p className="text-zinc-600 mb-6">
                             Let's build something tailored to your needs. Our team specializes in creating bespoke AI solutions that scale with your business.
                         </p>
-                        <Link href="/start-project" className="btn-gradient inline-flex items-center gap-2">
+                        <Link href="/start-project" className="btn-gradient inline-flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all">
                             Start Your Project <ArrowRight className="w-4 h-4" />
                         </Link>
-                    </LiquidGlassCard>
+                    </GlassCard>
                 </motion.div>
             </div>
         </div>
