@@ -29,8 +29,6 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
 
     return (
         <>
-            {/* Gritty film grain overlay */}
-            <div className="noise-overlay" />
             {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
             <div style={{ opacity: showContent ? 1 : 0, transition: "opacity 0.5s ease-in-out" }}>
                 {children}

@@ -9,7 +9,7 @@ export default function LoadingDemoPage() {
 
     return (
         <div className="min-h-screen pt-32 pb-20">
-            <div className="aurora-bg" />
+            
 
             {showLoading && <LoadingScreen onComplete={() => setShowLoading(false)} />}
 

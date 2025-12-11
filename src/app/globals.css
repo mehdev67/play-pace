@@ -163,59 +163,13 @@ body {
   animation: spotlight 2s ease .75s 1 forwards;
 }
 
-.aurora-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-  z-index: -1;
-  background: var(--background);
-}
 
-.aurora-bg::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background:
-    radial-gradient(ellipse at 20% 20%, rgba(134, 86, 255, 0.12) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(255, 81, 69, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 40% 80%, rgba(110, 255, 197, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 80%, rgba(23, 0, 247, 0.10) 0%, transparent 50%);
-  animation: aurora 20s ease-in-out infinite;
-}
-
-@keyframes aurora {
-
-  0%,
-  100% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-
-  25% {
-    transform: translate(-5%, 5%) rotate(2deg);
-  }
-
-  50% {
-    transform: translate(5%, -5%) rotate(-2deg);
-  }
-
-  75% {
-    transform: translate(-3%, -3%) rotate(1deg);
-  }
-}
 
 .glass-card {
   background: linear-gradient(135deg,
       rgba(255, 255, 255, 0.08) 0%,
       rgba(255, 255, 255, 0.03) 50%,
       rgba(255, 255, 255, 0.05) 100%);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 20px;
   box-shadow:
@@ -268,7 +222,6 @@ body {
 
 .btn-gradient:hover {
   transform: translateY(-2px);
-  box-shadow: var(--glow-purple);
 }
 
 .btn-gradient:hover::before {
@@ -298,16 +251,7 @@ body {
   color: var(--accent-purple);
 }
 
-.grid-pattern {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 60px 60px;
-  mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
-  -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
-}
+
 
 @keyframes ripple {
   0% {
@@ -456,103 +400,6 @@ body {
       rgba(255, 255, 255, 0.4),
       transparent);
   animation: shimmer-line 3s ease-in-out infinite;
-}
-
-.noise-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-}
-
-.depth-shadow {
-  box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.1),
-    0 8px 16px rgba(0, 0, 0, 0.1),
-    0 16px 32px rgba(0, 0, 0, 0.15),
-    0 32px 64px rgba(0, 0, 0, 0.15);
-}
-
-.neon-glow {
-  text-shadow:
-    0 0 5px var(--accent-purple),
-    0 0 10px var(--accent-purple),
-    0 0 20px var(--accent-purple),
-    0 0 40px var(--accent-pink);
-}
-
-.scanlines {
-  position: relative;
-}
-
-.scanlines::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  background: repeating-linear-gradient(0deg,
-      transparent,
-      transparent 2px,
-      rgba(0, 0, 0, 0.1) 2px,
-      rgba(0, 0, 0, 0.1) 4px);
-}
-
-.vignette {
-  position: relative;
-}
-
-.vignette::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  background: radial-gradient(ellipse at center,
-      transparent 0%,
-      transparent 50%,
-      rgba(0, 0, 0, 0.4) 100%);
-}
-
-@keyframes holo {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.holographic {
-  background: linear-gradient(45deg,
-      var(--accent-purple),
-      var(--accent-pink),
-      var(--accent-cyan),
-      var(--accent-blue),
-      var(--accent-purple));
-  background-size: 400% 400%;
-  animation: holo 8s ease infinite;
-}
-
-.particles {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
 }
 
 @keyframes reveal {

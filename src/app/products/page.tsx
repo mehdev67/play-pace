@@ -77,7 +77,7 @@ export default function ProductsPage() {
 
     return (
         <div className="min-h-screen pt-32 pb-20">
-            <div className="aurora-bg" />
+            
 
             <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
                 {/* Header */}

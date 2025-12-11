@@ -6,7 +6,6 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ClientLayoutWrapper from "@/components/ClientLayoutWrapper"; // Import the new wrapper
-import OceanBackground from "@/components/OceanBackground";
 import { Toaster } from "@/components/ui/toaster";
 import SupportChat from "@/components/SupportChat";
 
@@ -56,7 +55,6 @@ export default function RootLayout({
     <html lang="en" className={`dark ${GeistSans.variable} ${GeistMono.variable} ${greatVibes.variable}`}>
       <body className="antialiased font-sans">
         <ClientLayoutWrapper> {/* Use the wrapper here */}
-          <OceanBackground />
           <Navigation />
           <main>{children}</main>
           <Footer />

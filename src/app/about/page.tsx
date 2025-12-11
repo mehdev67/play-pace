@@ -45,7 +45,7 @@ export default function AboutPage() {
 
     return (
         <div className="min-h-screen pt-32 pb-20">
-            <div className="aurora-bg" />
+            
 
             {/* Hero */}
             <div className="relative max-w-6xl mx-auto px-6 lg:px-8 mb-24">

@@ -72,7 +72,7 @@ export default function StartProjectPage() {
     if (isSubmitted) {
         return (
             <div className="min-h-screen pt-32 pb-20 flex items-center justify-center">
-                <div className="aurora-bg" />
+                
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -123,7 +123,7 @@ export default function StartProjectPage() {
 
     return (
         <div className="min-h-screen pt-32 pb-20">
-            <div className="aurora-bg" />
+            
 
             <div className="relative max-w-4xl mx-auto px-6 lg:px-8">
                 {/* Header */}

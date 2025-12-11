@@ -10,50 +10,6 @@ import { ArrowRight, Sparkles, Zap, Bot } from "lucide-react";
 export default function Hero() {
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-            {/* Aurora Background */}
-            <div className="aurora-bg" />
-
-            {/* Grid Pattern */}
-            <div className="grid-pattern" />
-
-            {/* Floating Orbs - Ocean themed */}
-            <motion.div
-                animate={{
-                    y: [0, -30, 0],
-                    x: [0, 20, 0],
-                }}
-                transition={{
-                    duration: 8,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                }}
-                className="absolute top-1/4 left-1/4 w-64 h-64 bg-sky-500/15 rounded-full blur-3xl"
-            />
-            <motion.div
-                animate={{
-                    y: [0, 30, 0],
-                    x: [0, -20, 0],
-                }}
-                transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                }}
-                className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/12 rounded-full blur-3xl"
-            />
-            <motion.div
-                animate={{
-                    y: [0, -20, 0],
-                    x: [0, -15, 0],
-                }}
-                transition={{
-                    duration: 12,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                }}
-                className="absolute top-1/2 right-1/3 w-72 h-72 bg-teal-500/10 rounded-full blur-3xl"
-            />
-
             <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
 
 
@@ -143,9 +99,6 @@ export default function Hero() {
 
 
             </div>
-
-            {/* Bottom Gradient Fade */}
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#010409] to-transparent" />
         </section>
     );
 }
