@@ -16,35 +16,10 @@ const greatVibes = Great_Vibes({
 });
 
 
-export const metadata: Metadata = {
-  title: "PlayPace – AI Software & Automation | Sweden",
-  description:
-    "PlayPace is a creative AI and data studio based in Sweden. We build innovative software, mobile apps, automations and AI Agents that don't suck.",
-  keywords: [
-    "AI software",
-    "automation",
-    "AI agents",
-    "Sweden",
+import { defaultMetadata } from '@/config/seo';
+import { organizationSchema, websiteSchema } from '@/config/structured-data';
 
-    "machine learning",
-    "custom software development",
-  ],
-  authors: [{ name: "PlayPace" }],
-  openGraph: {
-    title: "PlayPace – AI Software & Automation | Sweden",
-    description:
-      "We build AI-powered software that runs fast, scales smart, and gives you the kind of edge others can't copy.",
-    url: "https://playpace.net",
-    siteName: "PlayPace",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "PlayPace – AI Software & Automation",
-    description:
-      "We build AI-powered software that runs fast, scales smart, and gives you the kind of edge others can't copy.",
-  },
-};
+export const metadata = defaultMetadata;
 
 export default function RootLayout({
   children,
@@ -53,6 +28,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable} ${greatVibes.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+      </head>
       <body className="antialiased font-sans" style={{
         background: "radial-gradient(ellipse at center, #f1f1f1 0%, #e5e5e5 70%, #d4d4d4 100%)",
         minHeight: "100vh",
