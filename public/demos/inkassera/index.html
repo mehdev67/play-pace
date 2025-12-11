@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="BINK! - AI-driven inkassoplattform för svenska företag">
+    <meta name="theme-color" content="#0a1128">
+    <title>BINK! | AI-Driven Inkasso Platform</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230a1128' width='100' height='100' rx='20'/><text x='50' y='65' font-size='50' font-weight='bold' fill='%233b82f6' text-anchor='middle'>B!</text></svg>">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <span class="logo-text">BINK<span class="logo-accent">!</span></span>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <p class="loading-text">Laddar AI-inkassoplattform...</p>
+        </div>
+    </div>
+
+    <!-- App Container -->
+    <div class="app" id="app">
+        <!-- Mobile Header -->
+        <header class="mobile-header">
+            <button class="menu-toggle" id="menuToggle" aria-label="Öppna meny">
+                <i data-lucide="menu"></i>
+            </button>
+            <div class="mobile-logo">
+                <span class="logo-text">BINK<span class="logo-accent">!</span></span>
+            </div>
+            <div class="mobile-actions">
+                <button class="icon-btn" id="mobileNotifications" aria-label="Notifikationer">
+                    <i data-lucide="bell"></i>
+                    <span class="notification-badge" id="mobileNotifBadge">3</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-text">BINK<span class="logo-accent">!</span></span>
+                </div>
+                <button class="sidebar-close" id="sidebarClose" aria-label="Stäng meny">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-page="dashboard">
+                    <i data-lucide="layout-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item" data-page="cases">
+                    <i data-lucide="folder-open"></i>
+                    <span>Ärenden</span>
+                    <span class="nav-badge" id="casesCount">0</span>
+                </a>
+                <a href="#" class="nav-item" data-page="dispens">
+                    <i data-lucide="sliders-horizontal"></i>
+                    <span>Dispens & Betalplaner</span>
+                </a>
+                <a href="#" class="nav-item" data-page="ai">
+                    <i data-lucide="sparkles"></i>
+                    <span>AI-Assistent</span>
+                </a>
+                <a href="#" class="nav-item" data-page="automation">
+                    <i data-lucide="workflow"></i>
+                    <span>Automatisering</span>
+                </a>
+                <a href="#" class="nav-item" data-page="reports">
+                    <i data-lucide="bar-chart-3"></i>
+                    <span>Rapporter</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="sync-status">
+                    <div class="sync-indicator active"></div>
+                    <span>Synkad</span>
+                    <span class="sync-time" id="lastSyncTime">Just nu</span>
+                </div>
+                <div class="user-menu">
+                    <div class="user-avatar">
+                        <span>AH</span>
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">Admin Hansson</span>
+                        <span class="user-role">Systemadmin</span>
+                    </div>
+                    <button class="icon-btn" aria-label="Användarinställningar">
+                        <i data-lucide="settings"></i>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Sidebar Overlay -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <div class="search-container">
+                    <i data-lucide="search"></i>
+                    <input type="text" class="search-input" id="globalSearch" placeholder="Sök ärenden, gäldenärer...">
+                    <kbd class="search-shortcut">⌘K</kbd>
+                </div>
+                <div class="top-bar-actions">
+                    <button class="icon-btn" id="notificationsBtn" aria-label="Notifikationer">
+                        <i data-lucide="bell"></i>
+                        <span class="notification-badge" id="notifBadge">3</span>
+                    </button>
+                    <button class="btn btn-primary" id="quickImportBtn">
+                        <i data-lucide="upload"></i>
+                        <span>Importera</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Pages Container -->
+            <div class="pages-container">
+                <!-- ==================== DASHBOARD PAGE ==================== -->
+                <section class="page active" id="dashboardPage">
+                    <div class="page-header">
+                        <div class="page-title-group">
+                            <h1 class="page-title">Dashboard</h1>
+                            <p class="page-subtitle">Översikt av din inkassoverksamhet</p>
+                        </div>
+                        <div class="page-actions">
+                            <button class="btn btn-outline" id="refreshDashboard">
+                                <i data-lucide="refresh-cw"></i>
+                                <span>Uppdatera</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- KPI Cards -->
+                    <div class="kpi-grid" id="kpiGrid">
+                        <!-- KPI cards populated by JS -->
+                    </div>
+
+                    <!-- System Status -->
+                    <div class="section-card">
+                        <div class="section-header">
+                            <h2 class="section-title">
+                                <i data-lucide="activity"></i>
+                                Systemstatus
+                            </h2>
+                            <span class="status-badge success">Alla system operativa</span>
+                        </div>
+                        <div class="system-status-grid" id="systemStatus">
+                            <!-- Status items populated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Dashboard Grid -->
+                    <div class="dashboard-grid">
+                        <!-- Recent Cases -->
+                        <div class="section-card">
+                            <div class="section-header">
+                                <h2 class="section-title">
+                                    <i data-lucide="clock"></i>
+                                    Senaste ärenden
+                                </h2>
+                                <a href="#" class="link-btn" data-page="cases">
+                                    Visa alla
+                                    <i data-lucide="arrow-right"></i>
+                                </a>
+                            </div>
+                            <div class="recent-cases-list" id="recentCases">
+                                <!-- Recent cases populated by JS -->
+                            </div>
+                        </div>
+
+                        <!-- Quick Actions -->
+                        <div class="section-card">
+                            <div class="section-header">
+                                <h2 class="section-title">
+                                    <i data-lucide="zap"></i>
+                                    Snabbåtgärder
+                                </h2>
+                            </div>
+                            <div class="quick-actions-grid">
+                                <button class="quick-action-btn" data-action="new-case">
+                                    <div class="quick-action-icon blue">
+                                        <i data-lucide="plus-circle"></i>
+                                    </div>
+                                    <span>Nytt ärende</span>
+                                </button>
+                                <button class="quick-action-btn" data-action="import">
+                                    <div class="quick-action-icon purple">
+                                        <i data-lucide="upload-cloud"></i>
+                                    </div>
+                                    <span>Importera</span>
+                                </button>
+                                <button class="quick-action-btn" data-action="send-reminders">
+                                    <div class="quick-action-icon amber">
+                                        <i data-lucide="send"></i>
+                                    </div>
+                                    <span>Skicka påminnelser</span>
+                                </button>
+                                <button class="quick-action-btn" data-action="ai-analyze">
+                                    <div class="quick-action-icon green">
+                                        <i data-lucide="sparkles"></i>
+                                    </div>
+                                    <span>AI-analys</span>
+                                </button>
+                                <button class="quick-action-btn" data-action="export">
+                                    <div class="quick-action-icon slate">
+                                        <i data-lucide="download"></i>
+                                    </div>
+                                    <span>Exportera</span>
+                                </button>
+                                <button class="quick-action-btn" data-action="kronofogden">
+                                    <div class="quick-action-icon red">
+                                        <i data-lucide="scale"></i>
+                                    </div>
+                                    <span>Kronofogden</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==================== CASES PAGE ==================== -->
+                <section class="page" id="casesPage">
+                    <div class="page-header">
+                        <div class="page-title-group">
+                            <h1 class="page-title">Ärendehantering</h1>
+                            <p class="page-subtitle">Hantera alla inkassoärenden</p>
+                        </div>
+                        <div class="page-actions">
+                            <button class="btn btn-outline" id="exportCasesBtn">
+                                <i data-lucide="download"></i>
+                                <span>Exportera</span>
+                            </button>
+                            <button class="btn btn-primary" id="importCasesBtn">
+                                <i data-lucide="upload"></i>
+                                <span>Importera</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Auto Import Toggle -->
+                    <div class="auto-import-bar">
+                        <div class="auto-import-info">
+                            <i data-lucide="refresh-cw"></i>
+                            <div class="auto-import-text">
+                                <span class="auto-import-title">Automatisk import</span>
+                                <span class="auto-import-status" id="autoImportStatus">Av</span>
+                            </div>
+                        </div>
+                        <div class="auto-import-actions">
+                            <span class="sync-timestamp" id="syncTimestamp">Senast synkad: --</span>
+                            <button class="btn btn-sm btn-ghost" id="manualSyncBtn">
+                                <i data-lucide="refresh-cw"></i>
+                                Synka nu
+                            </button>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="autoImportToggle">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Filters Bar -->
+                    <div class="filters-bar">
+                        <div class="filters-left">
+                            <div class="search-filter">
+                                <i data-lucide="search"></i>
+                                <input type="text" id="caseSearchInput" placeholder="Sök ärenden...">
+                            </div>
+                            <div class="filter-group">
+                                <select id="statusFilter" class="filter-select">
+                                    <option value="">Alla statusar</option>
+                                    <option value="active">Aktiv</option>
+                                    <option value="payment_plan">Betalningsplan</option>
+                                    <option value="dispensation">Dispens</option>
+                                    <option value="kronofogden">Kronofogden</option>
+                                    <option value="paid">Betald</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <select id="priorityFilter" class="filter-select">
+                                    <option value="">Alla prioriteter</option>
+                                    <option value="critical">Kritisk</option>
+                                    <option value="high">Hög</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="low">Låg</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-ghost btn-sm" id="clearFilters">
+                                <i data-lucide="x"></i>
+                                Rensa filter
+                            </button>
+                        </div>
+                        <div class="filters-right">
+                            <span class="results-count" id="resultsCount">0 ärenden</span>
+                        </div>
+                    </div>
+
+                    <!-- Bulk Actions Bar (hidden by default) -->
+                    <div class="bulk-actions-bar hidden" id="bulkActionsBar">
+                        <div class="bulk-selected">
+                            <span id="selectedCount">0</span> valda
+                        </div>
+                        <div class="bulk-buttons">
+                            <button class="btn btn-sm btn-ghost" data-bulk="status">
+                                <i data-lucide="tag"></i>
+                                Ändra status
+                            </button>
+                            <button class="btn btn-sm btn-ghost" data-bulk="priority">
+                                <i data-lucide="flag"></i>
+                                Ändra prioritet
+                            </button>
+                            <button class="btn btn-sm btn-ghost" data-bulk="reminder">
+                                <i data-lucide="send"></i>
+                                Skicka påminnelse
+                            </button>
+                            <button class="btn btn-sm btn-ghost text-danger" data-bulk="delete">
+                                <i data-lucide="trash-2"></i>
+                                Ta bort
+                            </button>
+                        </div>
+                        <button class="btn btn-sm btn-ghost" id="cancelBulk">
+                            <i data-lucide="x"></i>
+                        </button>
+                    </div>
+
+                    <!-- Cases Table -->
+                    <div class="table-card">
+                        <div class="table-container">
+                            <table class="data-table" id="casesTable">
+                                <thead>
+                                    <tr>
+                                        <th class="col-checkbox">
+                                            <label class="checkbox">
+                                                <input type="checkbox" id="selectAllCases">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </th>
+                                        <th class="col-sortable" data-sort="id">
+                                            Ärende-ID
+                                            <i data-lucide="chevrons-up-down"></i>
+                                        </th>
+                                        <th class="col-sortable" data-sort="debtor">
+                                            Gäldenär
+                                            <i data-lucide="chevrons-up-down"></i>
+                                        </th>
+                                        <th class="col-sortable col-hide-mobile" data-sort="invoice">
+                                            Fakturanr
+                                            <i data-lucide="chevrons-up-down"></i>
+                                        </th>
+                                        <th class="col-sortable" data-sort="amount">
+                                            Belopp
+                                            <i data-lucide="chevrons-up-down"></i>
+                                        </th>
+                                        <th class="col-sortable col-hide-tablet" data-sort="daysOverdue">
+                                            Förfallna
+                                            <i data-lucide="chevrons-up-down"></i>
+                                        </th>
+                                        <th class="col-sortable" data-sort="status">
+                                            Status
+                                            <i data-lucide="chevrons-up-down"></i>
+                                        </th>
+                                        <th class="col-sortable col-hide-mobile" data-sort="priority">
+                                            Prioritet
+                                            <i data-lucide="chevrons-up-down"></i>
+                                        </th>
+                                        <th class="col-actions">Åtgärder</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="casesTableBody">
+                                    <!-- Cases populated by JS -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="table-footer">
+                            <div class="pagination-info">
+                                Visar <span id="showingFrom">1</span>-<span id="showingTo">25</span> av <span id="totalResults">0</span>
+                            </div>
+                            <div class="pagination-controls">
+                                <select id="perPageSelect" class="per-page-select">
+                                    <option value="25">25 per sida</option>
+                                    <option value="50">50 per sida</option>
+                                    <option value="100">100 per sida</option>
+                                </select>
+                                <div class="pagination-buttons">
+                                    <button class="pagination-btn" id="prevPageBtn" disabled>
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                    <span class="pagination-current" id="currentPageInfo">Sida 1</span>
+                                    <button class="pagination-btn" id="nextPageBtn">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==================== DISPENS PAGE ==================== -->
+                <section class="page" id="dispensPage">
+                    <div class="page-header">
+                        <div class="page-title-group">
+                            <h1 class="page-title">Dispens & Betalplaner</h1>
+                            <p class="page-subtitle">Hantera betalningsalternativ och dispensnivåer</p>
+                        </div>
+                    </div>
+
+                    <!-- Tabs -->
+                    <div class="tabs-container">
+                        <div class="tabs-nav">
+                            <button class="tab-btn active" data-tab="payment-plans">
+                                <i data-lucide="calendar"></i>
+                                Betalplaner
+                            </button>
+                            <button class="tab-btn" data-tab="dispens-levels">
+                                <i data-lucide="percent"></i>
+                                Dispensnivåer
+                            </button>
+                            <button class="tab-btn" data-tab="dementi">
+                                <i data-lucide="undo-2"></i>
+                                Dementihantering
+                            </button>
+                            <button class="tab-btn" data-tab="autogiro">
+                                <i data-lucide="repeat"></i>
+                                Autogiro
+                            </button>
+                        </div>
+
+                        <!-- Tab: Payment Plans -->
+                        <div class="tab-content active" id="payment-plans">
+                            <div class="tab-header">
+                                <h3>Betalplansmallar</h3>
+                                <button class="btn btn-primary btn-sm" id="addPaymentPlan">
+                                    <i data-lucide="plus"></i>
+                                    Ny mall
+                                </button>
+                            </div>
+                            <div class="payment-plans-grid" id="paymentPlansGrid">
+                                <!-- Payment plans populated by JS -->
+                            </div>
+                        </div>
+
+                        <!-- Tab: Dispens Levels -->
+                        <div class="tab-content" id="dispens-levels">
+                            <div class="tab-header">
+                                <h3>Dispensnivåer</h3>
+                                <p class="tab-description">Konfigurera automatiska rabattnivåer baserat på belopp</p>
+                            </div>
+                            <div class="dispens-levels-list" id="dispensLevelsList">
+                                <!-- Dispens levels populated by JS -->
+                            </div>
+                        </div>
+
+                        <!-- Tab: Dementi -->
+                        <div class="tab-content" id="dementi">
+                            <div class="tab-header">
+                                <h3>Dementihantering</h3>
+                                <p class="tab-description">Ärenden hos Kronofogden som kan återkallas</p>
+                            </div>
+                            <div class="dementi-list" id="dementiList">
+                                <!-- Dementi cases populated by JS -->
+                            </div>
+                        </div>
+
+                        <!-- Tab: Autogiro -->
+                        <div class="tab-content" id="autogiro">
+                            <div class="tab-header">
+                                <h3>Autogiro-inställningar</h3>
+                            </div>
+                            <div class="autogiro-dashboard">
+                                <div class="autogiro-status-cards">
+                                    <div class="status-card">
+                                        <div class="status-card-icon green">
+                                            <i data-lucide="check-circle"></i>
+                                        </div>
+                                        <div class="status-card-content">
+                                            <span class="status-card-value" id="activeAutogiro">0</span>
+                                            <span class="status-card-label">Aktiva medgivanden</span>
+                                        </div>
+                                    </div>
+                                    <div class="status-card">
+                                        <div class="status-card-icon amber">
+                                            <i data-lucide="clock"></i>
+                                        </div>
+                                        <div class="status-card-content">
+                                            <span class="status-card-value" id="pendingAutogiro">0</span>
+                                            <span class="status-card-label">Väntande medgivanden</span>
+                                        </div>
+                                    </div>
+                                    <div class="status-card">
+                                        <div class="status-card-icon blue">
+                                            <i data-lucide="calendar"></i>
+                                        </div>
+                                        <div class="status-card-content">
+                                            <span class="status-card-value" id="nextDrawDate">--</span>
+                                            <span class="status-card-label">Nästa dragning</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="autogiro-settings">
+                                    <h4>BGC-inställningar</h4>
+                                    <div class="settings-form">
+                                        <div class="form-group">
+                                            <label>Bankgironummer</label>
+                                            <input type="text" class="form-input" value="5432-1234" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Dragningsdag</label>
+                                            <select class="form-select">
+                                                <option value="28">28:e varje månad</option>
+                                                <option value="15">15:e varje månad</option>
+                                                <option value="last">Sista bankdagen</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>BGC-status</label>
+                                            <div class="bgc-status connected">
+                                                <i data-lucide="check-circle"></i>
+                                                <span>Ansluten till BGC</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==================== AI ASSISTANT PAGE ==================== -->
+                <section class="page" id="aiPage">
+                    <div class="page-header">
+                        <div class="page-title-group">
+                            <h1 class="page-title">AI-Assistent</h1>
+                            <p class="page-subtitle">Din intelligenta inkassopartner</p>
+                        </div>
+                    </div>
+
+                    <div class="ai-container">
+                        <!-- Quick Prompts -->
+                        <div class="ai-quick-prompts">
+                            <h3>Snabbkommandon</h3>
+                            <div class="prompts-grid">
+                                <button class="prompt-btn" data-prompt="analyze-portfolio">
+                                    <i data-lucide="pie-chart"></i>
+                                    <span>Analysera portfölj</span>
+                                </button>
+                                <button class="prompt-btn" data-prompt="suggest-plan">
+                                    <i data-lucide="lightbulb"></i>
+                                    <span>Föreslå betalplan</span>
+                                </button>
+                                <button class="prompt-btn" data-prompt="compliance-check">
+                                    <i data-lucide="shield-check"></i>
+                                    <span>Compliance-check</span>
+                                </button>
+                                <button class="prompt-btn" data-prompt="prioritize">
+                                    <i data-lucide="list-ordered"></i>
+                                    <span>Prioritera ärenden</span>
+                                </button>
+                                <button class="prompt-btn" data-prompt="fraud-detection">
+                                    <i data-lucide="alert-triangle"></i>
+                                    <span>Upptäck bedrägerier</span>
+                                </button>
+                                <button class="prompt-btn" data-prompt="settlement">
+                                    <i data-lucide="handshake"></i>
+                                    <span>Skuldreglering</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Chat Interface -->
+                        <div class="ai-chat">
+                            <div class="chat-messages" id="chatMessages">
+                                <!-- Chat messages populated by JS -->
+                            </div>
+                            <div class="chat-input-container">
+                                <div class="chat-input-wrapper">
+                                    <textarea 
+                                        id="chatInput" 
+                                        class="chat-input" 
+                                        placeholder="Ställ en fråga till AI-assistenten..."
+                                        rows="1"
+                                    ></textarea>
+                                    <button class="chat-send-btn" id="sendChatBtn">
+                                        <i data-lucide="send"></i>
+                                    </button>
+                                </div>
+                                <p class="chat-disclaimer">AI kan göra misstag. Verifiera viktig information.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==================== AUTOMATION PAGE ==================== -->
+                <section class="page" id="automationPage">
+                    <div class="page-header">
+                        <div class="page-title-group">
+                            <h1 class="page-title">Processautomatisering</h1>
+                            <p class="page-subtitle">AI-driven inkassoprocess från start till mål</p>
+                        </div>
+                    </div>
+
+                    <!-- Process Flow -->
+                    <div class="process-flow-container">
+                        <div class="process-flow" id="processFlow">
+                            <!-- Process steps populated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Performance Metrics -->
+                    <div class="automation-metrics">
+                        <div class="metric-card">
+                            <div class="metric-icon blue">
+                                <i data-lucide="zap"></i>
+                            </div>
+                            <div class="metric-content">
+                                <span class="metric-value">92%</span>
+                                <span class="metric-label">Automatiseringsgrad</span>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon green">
+                                <i data-lucide="clock"></i>
+                            </div>
+                            <div class="metric-content">
+                                <span class="metric-value">-67%</span>
+                                <span class="metric-label">Handläggningstid</span>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon purple">
+                                <i data-lucide="trending-up"></i>
+                            </div>
+                            <div class="metric-content">
+                                <span class="metric-value">+34%</span>
+                                <span class="metric-label">Återvinning</span>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon amber">
+                                <i data-lucide="shield-check"></i>
+                            </div>
+                            <div class="metric-content">
+                                <span class="metric-value">99.8%</span>
+                                <span class="metric-label">Compliance</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Active Automations -->
+                    <div class="section-card">
+                        <div class="section-header">
+                            <h2 class="section-title">
+                                <i data-lucide="play-circle"></i>
+                                Aktiva automatiseringar
+                            </h2>
+                            <button class="btn btn-primary btn-sm" id="addAutomation">
+                                <i data-lucide="plus"></i>
+                                Ny regel
+                            </button>
+                        </div>
+                        <div class="automations-list" id="automationsList">
+                            <!-- Automations populated by JS -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==================== REPORTS PAGE ==================== -->
+                <section class="page" id="reportsPage">
+                    <div class="page-header">
+                        <div class="page-title-group">
+                            <h1 class="page-title">Rapporter & Analys</h1>
+                            <p class="page-subtitle">Insikter och statistik för din verksamhet</p>
+                        </div>
+                        <div class="page-actions">
+                            <button class="btn btn-outline" id="exportReportBtn">
+                                <i data-lucide="download"></i>
+                                <span>Exportera rapport</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Market Share Section -->
+                    <div class="reports-grid">
+                        <div class="section-card market-share-card">
+                            <div class="section-header">
+                                <h2 class="section-title">
+                                    <i data-lucide="pie-chart"></i>
+                                    Marknadsandel
+                                </h2>
+                                <span class="growth-badge">+245%</span>
+                            </div>
+                            <div class="market-share-content">
+                                <div class="donut-chart-container">
+                                    <div class="donut-chart" id="marketShareChart">
+                                        <div class="donut-center">
+                                            <span class="donut-value">18.5%</span>
+                                            <span class="donut-label">BINK!</span>
+                                        </div>
+                                    </div>
+                                    <div class="donut-legend">
+                                        <div class="legend-item">
+                                            <span class="legend-color blue"></span>
+                                            <span>BINK!</span>
+                                            <span class="legend-value">18.5%</span>
+                                        </div>
+                                        <div class="legend-item">
+                                            <span class="legend-color gray"></span>
+                                            <span>Traditionella</span>
+                                            <span class="legend-value">81.5%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="market-stats">
+                                    <div class="market-stat">
+                                        <span class="market-stat-value">847</span>
+                                        <span class="market-stat-label">Aktiva kunder</span>
+                                    </div>
+                                    <div class="market-stat">
+                                        <span class="market-stat-value">+23%</span>
+                                        <span class="market-stat-label">MoM tillväxt</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Collection Efficiency -->
+                        <div class="section-card">
+                            <div class="section-header">
+                                <h2 class="section-title">
+                                    <i data-lucide="bar-chart-2"></i>
+                                    Inkassoeffektivitet
+                                </h2>
+                            </div>
+                            <div class="efficiency-comparison" id="efficiencyComparison">
+                                <!-- Efficiency bars populated by JS -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Monthly Trend -->
+                    <div class="section-card">
+                        <div class="section-header">
+                            <h2 class="section-title">
+                                <i data-lucide="trending-up"></i>
+                                Månadsutveckling
+                            </h2>
+                        </div>
+                        <div class="monthly-chart" id="monthlyChart">
+                            <!-- Monthly bars populated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Market Size Cards -->
+                    <div class="market-size-grid">
+                        <div class="market-size-card">
+                            <div class="market-size-icon">
+                                <i data-lucide="building-2"></i>
+                            </div>
+                            <div class="market-size-content">
+                                <span class="market-size-value">45 mdr</span>
+                                <span class="market-size-label">Total marknad (SEK)</span>
+                            </div>
+                        </div>
+                        <div class="market-size-card">
+                            <div class="market-size-icon">
+                                <i data-lucide="users"></i>
+                            </div>
+                            <div class="market-size-content">
+                                <span class="market-size-value">12,500</span>
+                                <span class="market-size-label">Potentiella kunder</span>
+                            </div>
+                        </div>
+                        <div class="market-size-card">
+                            <div class="market-size-icon">
+                                <i data-lucide="target"></i>
+                            </div>
+                            <div class="market-size-content">
+                                <span class="market-size-value">8.3 mdr</span>
+                                <span class="market-size-label">Adresserbar marknad</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- ==================== MODALS ==================== -->
+    
+    <!-- Import Modal -->
+    <div class="modal" id="importModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content modal-lg">
+            <div class="modal-header">
+                <h2 class="modal-title">Importera ärenden</h2>
+                <button class="modal-close" data-close-modal>
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">Välj en integration för att importera ärenden</p>
+                <div class="integrations-grid" id="integrationsGrid">
+                    <!-- Integrations populated by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Case Detail Modal -->
+    <div class="modal" id="caseDetailModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content modal-lg">
+            <div class="modal-header">
+                <h2 class="modal-title" id="caseDetailTitle">Ärendedetaljer</h2>
+                <button class="modal-close" data-close-modal>
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="caseDetailBody">
+                <!-- Case details populated by JS -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-ghost" data-close-modal>Stäng</button>
+                <button class="btn btn-primary" id="saveCaseChanges">Spara ändringar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Case Modal -->
+    <div class="modal" id="newCaseModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content modal-lg">
+            <div class="modal-header">
+                <h2 class="modal-title">Nytt ärende</h2>
+                <button class="modal-close" data-close-modal>
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="newCaseForm" class="case-form">
+                    <div class="form-section">
+                        <h3 class="form-section-title">Gäldenärinformation</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label">Namn *</label>
+                                <input type="text" class="form-input" name="debtorName" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Personnummer/Org.nr</label>
+                                <input type="text" class="form-input" name="personalNumber" placeholder="YYYYMMDD-XXXX">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">E-post</label>
+                                <input type="email" class="form-input" name="email">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Telefon *</label>
+                                <input type="tel" class="form-input" name="phone" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-section">
+                        <h3 class="form-section-title">Fakturainformation</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label">Fakturanummer *</label>
+                                <input type="text" class="form-input" name="invoiceNumber" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Belopp (SEK) *</label>
+                                <input type="number" class="form-input" name="amount" min="1" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Fakturadatum *</label>
+                                <input type="date" class="form-input" name="invoiceDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Förfallodatum *</label>
+                                <input type="date" class="form-input" name="dueDate" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-section">
+                        <h3 class="form-section-title">Ärendeinställningar</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label">Prioritet</label>
+                                <select class="form-select" name="priority">
+                                    <option value="low">Låg</option>
+                                    <option value="medium" selected>Medium</option>
+                                    <option value="high">Hög</option>
+                                    <option value="critical">Kritisk</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Anteckningar</label>
+                                <textarea class="form-textarea" name="notes" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-ghost" data-close-modal>Avbryt</button>
+                <button class="btn btn-primary" id="submitNewCase">Skapa ärende</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Panel -->
+    <div class="notification-panel" id="notificationPanel">
+        <div class="notification-header">
+            <h3>Notifikationer</h3>
+            <button class="btn btn-ghost btn-sm" id="markAllRead">Markera alla lästa</button>
+        </div>
+        <div class="notification-list" id="notificationList">
+            <!-- Notifications populated by JS -->
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/state.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/pages.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

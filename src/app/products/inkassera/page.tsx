@@ -47,7 +47,7 @@ export default function InkasseraPage() {
                         className="w-full"
                     >
                         <iframe
-                            src="https://codesandbox.io/p/devbox/code-sandbox-light-c3224?embed=1&file=%2Findex.html"
+                            src="/demos/inkassera/index.html"
                             style={{
                                 width: "100%",
                                 height: "80vh",
