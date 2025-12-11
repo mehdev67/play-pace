@@ -31,6 +31,7 @@ const products = [
         gradient: "from-blue-500 to-indigo-500",
         popular: true,
         accentColor: "blue",
+        buttonText: "Get Started",
     },
     {
         id: "inkassera",
@@ -50,6 +51,7 @@ const products = [
         gradient: "from-emerald-500 to-teal-500",
         popular: false,
         accentColor: "emerald",
+        buttonText: "Demo",
     },
     {
         id: "market-validation",
@@ -66,9 +68,10 @@ const products = [
             "Pivot recommendations",
             "Go/no-go insights",
         ],
-        gradient: "from-amber-500 to-orange-500",
+        gradient: "from-red-500 to-rose-500",
         popular: false,
-        accentColor: "amber",
+        accentColor: "red",
+        buttonText: "Get Started",
     },
     {
         id: "competitive-intelligence",
@@ -88,6 +91,7 @@ const products = [
         gradient: "from-purple-500 to-pink-500",
         popular: false,
         accentColor: "purple",
+        buttonText: "Get Started",
     },
 ];
 
@@ -186,7 +190,7 @@ export default function ForBusinessPage() {
                                         href={`/products/${product.id}`}
                                         className={`w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-medium transition-all text-zinc-900 shadow-lg bg-white/20 backdrop-blur-md border border-${product.accentColor}-500/30 hover:shadow-xl hover:scale-[1.02]`}
                                     >
-                                        <span>Get Started</span>
+                                        <span>{product.buttonText || "Get Started"}</span>
                                         <ArrowRight className="w-4 h-4" />
                                     </Link>
                                 </div>
