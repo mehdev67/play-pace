@@ -72,7 +72,7 @@ export default function TeamPage() {
                         <span className="text-sm text-purple-400 font-medium">Team PlayPace</span>
                     </div>
 
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-900 mb-6">
                         Meet the{" "}
                         <span className="gradient-text">Humans</span> Behind the Magic
                     </h1>
@@ -115,7 +115,7 @@ export default function TeamPage() {
 
                                     {/* Info */}
                                     <div className="text-center sm:text-left">
-                                        <h3 className="text-2xl font-bold text-white mb-1">
+                                        <h3 className="text-2xl font-bold text-zinc-900 mb-1">
                                             {member.name}
                                         </h3>
                                         <p className="text-purple-400 font-medium mb-3">{member.role}</p>
@@ -163,7 +163,7 @@ export default function TeamPage() {
                         backgroundOpacity={0.03}
                         className="p-12 text-center"
                     >
-                        <h2 className="text-3xl font-bold text-white mb-4">
+                        <h2 className="text-3xl font-bold text-zinc-900 mb-4">
                             Want to Join the Team?
                         </h2>
                         <p className="text-lg text-zinc-400 mb-8 max-w-xl mx-auto">

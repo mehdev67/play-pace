@@ -138,7 +138,7 @@ export default function AIAgentsPage() {
                         </span>
                     </div>
 
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-900 mb-6">
                         Intelligent agents that{" "}
                         <span className="gradient-text">work for you</span>
                     </h1>
@@ -180,7 +180,7 @@ export default function AIAgentsPage() {
                                 </div>
 
                                 {/* Content */}
-                                <h3 className="text-xl font-bold text-white mb-1">
+                                <h3 className="text-xl font-bold text-zinc-900 mb-1">
                                     {agent.name}
                                 </h3>
                                 <p
@@ -234,7 +234,7 @@ export default function AIAgentsPage() {
                 >
                     <div className="inline-block p-8 rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-sm">
                         <Sparkles className="w-8 h-8 text-[#8656ff] mx-auto mb-4" strokeWidth={1.5} />
-                        <h2 className="text-2xl font-bold text-white mb-2">
+                        <h2 className="text-2xl font-bold text-zinc-900 mb-2">
                             Ready to automate?
                         </h2>
                         <p className="text-zinc-400 mb-6 max-w-md">

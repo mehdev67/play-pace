@@ -91,7 +91,7 @@ export default function StartProjectPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3 }}
-                        className="text-4xl font-bold text-white mb-4"
+                        className="text-4xl font-bold text-zinc-900 mb-4"
                     >
                         Project Request Received! 🚀
                     </motion.h1>
@@ -103,7 +103,7 @@ export default function StartProjectPage() {
                     >
                         Thank you for choosing PlayPace! We'll review your project details and get
                         back to you within 24 hours at{" "}
-                        <span className="text-white font-medium">{formData.email}</span>
+                        <span className="text-zinc-900 font-medium">{formData.email}</span>
                     </motion.p>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -126,7 +126,7 @@ export default function StartProjectPage() {
         <div className="min-h-screen pt-16 sm:pt-24 pb-16 sm:pb-20">
 
 
-            <div className="relative max-w-4xl mx-auto px-6 lg:px-8">
+            <div className="relative max-w-4xl mx-auto px-6">
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -140,11 +140,11 @@ export default function StartProjectPage() {
                         </span>
                     </div>
 
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-900 mb-6">
                         Let's Build Your{" "}
                         <span className="gradient-text">Next Big Thing</span>
                     </h1>
-                    <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
+                    <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
                         Fill out the form below and we'll get back to you within 24 hours with a
                         detailed proposal and timeline.
                     </p>
@@ -155,26 +155,27 @@ export default function StartProjectPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
+                    className="w-full max-w-2xl mx-auto"
                 >
                     <GlassCard
                         blur={12}
                         borderRadius={24}
-                        borderOpacity={0.15}
+                        borderOpacity={0.3}
                         backgroundColor="#ffffff"
-                        backgroundOpacity={0.03}
-                        className="p-8 lg:p-12"
+                        backgroundOpacity={0.6}
+                        className="p-8 lg:p-12 border border-zinc-200 shadow-lg"
                     >
                         <form onSubmit={handleSubmit} className="space-y-6">
                             {/* Personal Info */}
                             <div className="space-y-6">
-                                <h2 className="text-xl font-semibold text-white flex items-center gap-2">
-                                    <User className="w-5 h-5 text-purple-400" />
+                                <h2 className="text-xl font-semibold text-zinc-900 flex items-center justify-center gap-2">
+                                    <User className="w-5 h-5 text-purple-500" />
                                     Your Information
                                 </h2>
 
                                 <div className="grid sm:grid-cols-2 gap-6">
                                     <div>
-                                        <label className="block text-sm font-medium text-zinc-300 mb-2">
+                                        <label className="block text-sm font-medium text-zinc-700 mb-2 text-center">
                                             Full Name *
                                         </label>
                                         <input
@@ -183,13 +184,13 @@ export default function StartProjectPage() {
                                             value={formData.name}
                                             onChange={handleChange}
                                             placeholder="John Doe"
-                                            className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-zinc-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/50 transition-all"
+                                            className="w-full px-4 py-3 bg-white/80 border border-zinc-300 rounded-xl text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/50 transition-all"
                                             required
                                         />
                                     </div>
 
                                     <div>
-                                        <label className="block text-sm font-medium text-zinc-300 mb-2">
+                                        <label className="block text-sm font-medium text-zinc-700 mb-2 text-center">
                                             Email Address *
                                         </label>
                                         <input
@@ -198,7 +199,7 @@ export default function StartProjectPage() {
                                             value={formData.email}
                                             onChange={handleChange}
                                             placeholder="john@company.com"
-                                            className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-all"
+                                            className="w-full px-4 py-3 bg-white/80 border border-zinc-300 rounded-xl text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/50 transition-all"
                                             required
                                         />
                                     </div>
@@ -206,7 +207,7 @@ export default function StartProjectPage() {
 
                                 <div className="grid sm:grid-cols-2 gap-6">
                                     <div>
-                                        <label className="block text-sm font-medium text-zinc-300 mb-2">
+                                        <label className="block text-sm font-medium text-zinc-700 mb-2 text-center">
                                             Phone Number
                                         </label>
                                         <input
@@ -215,12 +216,12 @@ export default function StartProjectPage() {
                                             value={formData.phone}
                                             onChange={handleChange}
                                             placeholder="+46 70 123 4567"
-                                            className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-all"
+                                            className="w-full px-4 py-3 bg-white/80 border border-zinc-300 rounded-xl text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/50 transition-all"
                                         />
                                     </div>
 
                                     <div>
-                                        <label className="block text-sm font-medium text-zinc-300 mb-2">
+                                        <label className="block text-sm font-medium text-zinc-700 mb-2 text-center">
                                             Company Name
                                         </label>
                                         <input
@@ -229,52 +230,52 @@ export default function StartProjectPage() {
                                             value={formData.company}
                                             onChange={handleChange}
                                             placeholder="Your Company AB"
-                                            className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-all"
+                                            className="w-full px-4 py-3 bg-white/80 border border-zinc-300 rounded-xl text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/50 transition-all"
                                         />
                                     </div>
                                 </div>
                             </div>
 
                             {/* Project Details */}
-                            <div className="space-y-6 pt-6 border-t border-white/10">
-                                <h2 className="text-xl font-semibold text-white flex items-center gap-2">
-                                    <Briefcase className="w-5 h-5 text-purple-400" />
+                            <div className="space-y-6 pt-6 border-t border-zinc-200">
+                                <h2 className="text-xl font-semibold text-zinc-900 flex items-center justify-center gap-2">
+                                    <Briefcase className="w-5 h-5 text-purple-500" />
                                     Project Details
                                 </h2>
 
                                 <div>
-                                    <label className="block text-sm font-medium text-zinc-300 mb-2">
+                                    <label className="block text-sm font-medium text-zinc-700 mb-2 text-center">
                                         What type of project? *
                                     </label>
                                     <select
                                         name="projectType"
                                         value={formData.projectType}
                                         onChange={handleChange}
-                                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/50 transition-all appearance-none cursor-pointer"
+                                        className="w-full px-4 py-3 bg-white/80 border border-zinc-300 rounded-xl text-zinc-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/50 transition-all appearance-none cursor-pointer"
                                         required
                                     >
-                                        <option value="" className="bg-zinc-900">
+                                        <option value="" className="bg-white">
                                             Select project type...
                                         </option>
-                                        <option value="ai-agent" className="bg-zinc-900">
+                                        <option value="ai-agent" className="bg-white">
                                             AI Agent / Automation
                                         </option>
-                                        <option value="web-app" className="bg-zinc-900">
+                                        <option value="web-app" className="bg-white">
                                             Web Application
                                         </option>
-                                        <option value="mobile-app" className="bg-zinc-900">
+                                        <option value="mobile-app" className="bg-white">
                                             Mobile App
                                         </option>
-                                        <option value="styleguide" className="bg-zinc-900">
+                                        <option value="styleguide" className="bg-white">
                                             Styleguide & Brand Design
                                         </option>
-                                        <option value="illustration" className="bg-zinc-900">
+                                        <option value="illustration" className="bg-white">
                                             Illustration & Graphics
                                         </option>
-                                        <option value="research" className="bg-zinc-900">
+                                        <option value="research" className="bg-white">
                                             Business Research
                                         </option>
-                                        <option value="other" className="bg-zinc-900">
+                                        <option value="other" className="bg-white">
                                             Other / Not Sure
                                         </option>
                                     </select>
@@ -282,14 +283,14 @@ export default function StartProjectPage() {
 
                                 <div className="grid sm:grid-cols-2 gap-6">
                                     <div>
-                                        <label className="block text-sm font-medium text-zinc-300 mb-2">
+                                        <label className="block text-sm font-medium text-zinc-700 mb-2 text-center">
                                             Budget Range *
                                         </label>
                                         <select
                                             name="budget"
                                             value={formData.budget}
                                             onChange={handleChange}
-                                            className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-all appearance-none cursor-pointer"
+                                            className="w-full px-4 py-3 bg-white/80 border border-zinc-300 rounded-xl text-zinc-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/50 transition-all appearance-none cursor-pointer"
                                             required
                                         >
                                             <option value="" className="bg-zinc-900">
@@ -314,14 +315,14 @@ export default function StartProjectPage() {
                                     </div>
 
                                     <div>
-                                        <label className="block text-sm font-medium text-zinc-300 mb-2">
+                                        <label className="block text-sm font-medium text-zinc-700 mb-2 text-center">
                                             Timeline *
                                         </label>
                                         <select
                                             name="timeline"
                                             value={formData.timeline}
                                             onChange={handleChange}
-                                            className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-all appearance-none cursor-pointer"
+                                            className="w-full px-4 py-3 bg-white/80 border border-zinc-300 rounded-xl text-zinc-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/50 transition-all appearance-none cursor-pointer"
                                             required
                                         >
                                             <option value="" className="bg-zinc-900">
@@ -344,7 +345,7 @@ export default function StartProjectPage() {
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-medium text-zinc-300 mb-2">
+                                    <label className="block text-sm font-medium text-zinc-700 mb-2 text-center">
                                         Project Description *
                                     </label>
                                     <textarea
@@ -353,7 +354,7 @@ export default function StartProjectPage() {
                                         onChange={handleChange}
                                         placeholder="Tell us about your project goals, requirements, and any specific features you need..."
                                         rows={6}
-                                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-zinc-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/50 transition-all resize-none"
+                                        className="w-full px-4 py-3 bg-white/80 border border-zinc-300 rounded-xl text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/50 transition-all resize-none"
                                         required
                                     />
                                 </div>

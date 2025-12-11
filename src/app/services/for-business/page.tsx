@@ -10,78 +10,97 @@ import {
 } from "lucide-react";
 import NextImage from "next/image";
 import { GlassCard } from "react-glass-ui";
+import OceanBackground from "@/components/OceanBackground";
 
 const products = [
     {
-        id: "receptionista",
-        icon: "/icons/receptionista.png",
-        title: "Receptionista",
-        tagline: "AI-Powered Receptionist",
+        id: "icp-reports",
+        icon: "/icons/icp.png",
+        title: "ICP Reports",
+        tagline: "Know Your Ideal Customer",
         description:
-            "Your always on AI receptionist that revolutionizes how you handle customer interactions. Gia answers calls, schedules appointments, and responds to inquiries with human like precision day or night.",
+            "Finally understand exactly who your ideal customer is and where to find them.",
         features: [
-            "24/7 availability",
-            "Natural conversation",
-            "Calendar integration",
-            "Multilingual support",
-            "Customizable voice",
-            "Detailed analytics",
+            "Customer profiling",
+            "Market segmentation",
+            "Behavioral insights",
+            "Target audience mapping",
+            "Data-driven personas",
+            "Actionable recommendations",
         ],
-
-        gradient: "from-cyan-500 to-blue-500",
+        gradient: "from-blue-500 to-indigo-500",
         popular: true,
-        accentColor: "cyan",
+        accentColor: "blue",
     },
     {
-        id: "notario",
-        icon: "/icons/Notario2.0.png",
-        title: "Notario",
-        tagline: "AI for Email & SMS",
+        id: "inkassera",
+        icon: "/icons/INKASSERA.png",
+        title: "Inkassera",
+        tagline: "Get Paid Faster",
         description:
-            "Your dedicated AI assistant that handles email and SMS communication around the clock. Notario automates responses, manages customer inquiries, and keeps conversations flowing any time of day or night.",
+            "Automated invoice management and collections that actually get you paid.",
         features: [
-            "24/7 email management",
-            "Smart auto replies",
-            "SMS integration add on",
-            "Natural conversation flow",
-            "Multilingual support",
-            "Detailed analytics",
+            "Automated reminders",
+            "Payment tracking",
+            "Collections workflow",
+            "Invoice generation",
+            "Cash flow insights",
+            "Integration ready",
         ],
-
-        gradient: "from-purple-500 to-pink-500",
-        popular: false,
-        accentColor: "purple",
-    },
-    {
-        id: "clientscreen",
-        icon: "/icons/ClientScreen.png",
-        title: "ClientScreen",
-        tagline: "AI Driven Client Onboarding",
-        description:
-            "A complete end to end system that transforms how you bring clients onboard. ClientScreen manages the entire journey from lead arrival to signed contract and invoice all running seamlessly in the background.",
-        features: [
-            "Automatic lead capture",
-            "AI powered qualification",
-            "Auto generated quotes",
-            "E signature integration",
-            "Automated invoicing",
-            "Native CRM integrations",
-        ],
-
         gradient: "from-emerald-500 to-teal-500",
         popular: false,
         accentColor: "emerald",
     },
+    {
+        id: "market-validation",
+        icon: "/icons/MARKET VALIDATION.png",
+        title: "Market Validation",
+        tagline: "Test Before You Invest",
+        description:
+            "Test your ideas before investing time and money in the wrong direction.",
+        features: [
+            "Idea testing",
+            "Customer feedback",
+            "Market demand analysis",
+            "Risk assessment",
+            "Pivot recommendations",
+            "Go/no-go insights",
+        ],
+        gradient: "from-amber-500 to-orange-500",
+        popular: false,
+        accentColor: "amber",
+    },
+    {
+        id: "competitive-intelligence",
+        icon: "/icons/COMPETATIVE.png",
+        title: "Competitive Intelligence",
+        tagline: "Stay Ahead of Rivals",
+        description:
+            "Know what your competitors are doing before they capture your market.",
+        features: [
+            "Competitor tracking",
+            "Market positioning",
+            "Pricing analysis",
+            "Strategy insights",
+            "Trend monitoring",
+            "Alert notifications",
+        ],
+        gradient: "from-purple-500 to-pink-500",
+        popular: false,
+        accentColor: "purple",
+    },
 ];
 
-export default function ProductsPage() {
+export default function ForBusinessPage() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
 
     return (
         <div className="min-h-screen pt-16 sm:pt-24 pb-16 sm:pb-20">
-
-
+            {/* Smokey central overlay */}
+            <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-1/2 left-1/2 w-80 h-80 -translate-x-1/2 -translate-y-1/2 bg-white/20 rounded-full filter blur-2xl"></div>
+            </div>
             <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
                 {/* Header */}
                 <motion.div
@@ -89,20 +108,21 @@ export default function ProductsPage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center mb-16"
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-600/5 border border-blue-600/10 backdrop-blur-md mb-6 transition-all duration-300 hover:scale-105 hover:bg-blue-600/10 hover:border-blue-600/40 hover:shadow-[0_0_20px_-3px_rgba(37,99,235,0.5)]">
-                        <Sparkles className="w-4 h-4 text-blue-600" strokeWidth={1.5} />
-                        <span className="text-sm font-medium text-blue-600">
-                            AI Products
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-700/10 border border-zinc-700/20 backdrop-blur-md mb-6 transition-all duration-300 hover:scale-105 hover:bg-zinc-700/20 hover:border-zinc-700/40 hover:shadow-[0_0_20px_-3px_rgba(63,63,70,0.5)]">
+                        <Sparkles className="w-4 h-4 text-zinc-700" strokeWidth={1.5} />
+                        <span className="text-sm font-medium text-zinc-700">
+                            For Business
                         </span>
                     </div>
 
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-900 mb-6">
-                        Ready-to-use{" "}
-                        <span className="gradient-text">AI Solutions</span>
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-900 mb-4">
+                        <span className="gradient-text">Business Services</span>
                     </h1>
-                    <p className="text-lg text-zinc-600 max-w-3xl mx-auto">
-                        Our products are ready to deploy right away. Powerful AI tools
-                        that automate and streamline your business operations.
+                    <p className="text-xl sm:text-2xl font-medium text-zinc-700 mb-4">
+                        Stop guessing. Start growing with data-driven decisions.
+                    </p>
+                    <p className="text-lg text-zinc-500 max-w-3xl mx-auto">
+                        For when you need clarity, cash flow, and competitive edge.
                     </p>
                 </motion.div>
 
@@ -143,7 +163,7 @@ export default function ProductsPage() {
                                 <h3 className="text-2xl font-bold text-zinc-900 mb-2 flex items-center justify-center gap-3">
                                     {product.title}
                                 </h3>
-                                <p className={`text-${product.accentColor}-600 font-medium mb-4`}>{product.tagline}</p>
+                                <p className="text-zinc-700 font-medium mb-4">{product.tagline}</p>
                                 <p className="text-zinc-600 mb-6 leading-relaxed">
                                     {product.description}
                                 </p>
@@ -192,21 +212,21 @@ export default function ProductsPage() {
                         blur={8}
                         distortion={15}
                         borderRadius={20}
-                        borderOpacity={0}
-                        backgroundColor="#ffffff"
-                        backgroundOpacity={0.4}
+                        borderOpacity={0.3}
+                        backgroundColor="#3f3f46"
+                        backgroundOpacity={0.08}
                         innerLightBlur={20}
-                        innerLightColor="#6effc5"
+                        innerLightColor="#71717a"
                         onHoverScale={1.02}
                         flexibility={0.5}
-                        className="p-8 text-center border shadow-sm ring-1 ring-purple-500/20 border-purple-200/50 hover:ring-purple-500/50 transition-all duration-300"
+                        className="p-8 text-center border-2 border-blue-200/50 shadow-lg ring-1 ring-blue-400/30 hover:ring-blue-500/50 hover:border-blue-300 transition-all duration-300"
                     >
-                        <span className="text-sm text-purple-600 font-medium mb-2 block">Enterprise</span>
+                        <span className="text-sm text-zinc-700 font-medium mb-2 block">Enterprise</span>
                         <h3 className="text-2xl font-bold text-zinc-900 mb-4">Custom AI Development</h3>
                         <p className="text-zinc-600 mb-6">
                             Let's build something tailored to your needs. Our team specializes in creating bespoke AI solutions that scale with your business.
                         </p>
-                        <Link href="/start-project" className="btn-gradient inline-flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all">
+                        <Link href="/start-project" className="inline-flex items-center gap-2 py-3 px-6 rounded-xl font-medium text-zinc-900 bg-white/20 backdrop-blur-md border border-blue-500/30 shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all">
                             Start Your Project <ArrowRight className="w-4 h-4" />
                         </Link>
                     </GlassCard>

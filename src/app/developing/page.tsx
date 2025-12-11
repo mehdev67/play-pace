@@ -185,13 +185,7 @@ export default function DevelopingPage() {
                                 onHoverScale={1.02}
                                 className={`p-6 sm:p-8 flex flex-col items-center text-center h-full border shadow-sm ring-1 ring-${service.accentColor}-500/20 border-${service.accentColor}-200/50 hover:ring-${service.accentColor}-500/50 transition-all duration-300`}
                             >
-                                {service.popular && (
-                                    <div className="mb-6">
-                                        <span className={`px-3 py-1 rounded-full bg-${service.accentColor}-500/10 text-${service.accentColor}-600 border border-${service.accentColor}-500/20 text-xs font-semibold shadow-sm`}>
-                                            Most Popular
-                                        </span>
-                                    </div>
-                                )}
+
 
                                 {/* Icon / Image */}
                                 <div className="mb-6 flex justify-center w-full">
@@ -206,7 +200,7 @@ export default function DevelopingPage() {
                                             />
                                         </div>
                                     ) : (
-                                        <div className={`w-14 h-14 rounded-2xl flex items-center justify-center bg-gradient-to-br ${service.gradient} shadow-lg text-white mx-auto`}>
+                                        <div className={`w-14 h-14 rounded-2xl flex items-center justify-center bg-gradient-to-br ${service.gradient} shadow-lg text-zinc-900 mx-auto`}>
                                             {/* @ts-ignore */}
                                             <service.icon className="w-7 h-7" />
                                         </div>
@@ -245,7 +239,7 @@ export default function DevelopingPage() {
                                     ) : (
                                         <Link
                                             href="/start-project"
-                                            className={`w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-medium transition-all text-white shadow-lg bg-gradient-to-r ${service.gradient} hover:shadow-xl hover:scale-[1.02]`}
+                                            className={`w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-medium transition-all text-zinc-900 shadow-lg bg-white/20 backdrop-blur-md border border-${service.accentColor}-500/30 hover:shadow-xl hover:scale-[1.02]`}
                                         >
                                             <span>Get Started</span>
                                             <ArrowRight className="w-4 h-4" />

@@ -88,7 +88,7 @@ export default function ContactPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3 }}
-                        className="text-4xl font-bold text-white mb-4"
+                        className="text-4xl font-bold text-zinc-900 mb-4"
                     >
                         Message Sent! 📬
                     </motion.h1>
@@ -99,7 +99,7 @@ export default function ContactPage() {
                         className="text-lg text-zinc-400 mb-8"
                     >
                         Thanks for reaching out! We'll get back to you within 24 hours at{" "}
-                        <span className="text-white font-medium">{formData.email}</span>
+                        <span className="text-zinc-900 font-medium">{formData.email}</span>
                     </motion.p>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -122,7 +122,7 @@ export default function ContactPage() {
         <div className="min-h-screen pt-16 sm:pt-24 pb-16 sm:pb-20">
 
 
-            <div className="relative max-w-5xl mx-auto px-6 lg:px-8">
+            <div className="relative max-w-4xl mx-auto px-6">
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -185,7 +185,7 @@ export default function ContactPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
-                    className="max-w-3xl mx-auto"
+                    className="max-w-2xl mx-auto"
                 >
                     <GlassCard
                         blur={12}
