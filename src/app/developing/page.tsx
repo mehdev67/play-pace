@@ -181,14 +181,20 @@ export default function DevelopingPage() {
                             )}
 
                             {/* Icon */}
-                            <div className="inline-flex p-4 rounded-2xl mb-6 relative">
-                                <NextImage
-                                    src={service.icon}
-                                    alt={service.title}
-                                    width={96}
-                                    height={96}
-                                    className="w-20 h-20 drop-shadow-2xl hover:scale-110 transition-transform duration-300"
-                                />
+                            <div className="relative mb-8 group/icon">
+                                {/* Glow effect behind */}
+                                <div className={`absolute inset-0 rounded-full bg-gradient-to-r ${service.gradient} blur-2xl opacity-30 group-hover/icon:opacity-60 transition-opacity duration-500 scale-75`} />
+
+                                {/* Floating animation wrapper */}
+                                <div className="relative animate-[float_3s_ease-in-out_infinite]">
+                                    <NextImage
+                                        src={service.icon}
+                                        alt={service.title}
+                                        width={160}
+                                        height={160}
+                                        className="w-32 h-32 drop-shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:scale-110 hover:drop-shadow-[0_0_40px_rgba(255,255,255,0.5)] transition-all duration-500"
+                                    />
+                                </div>
                             </div>
 
                             {/* Content */}

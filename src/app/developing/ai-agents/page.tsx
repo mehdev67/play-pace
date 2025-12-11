@@ -165,16 +165,24 @@ export default function AIAgentsPage() {
                                 }}
                             >
                                 {/* Icon */}
-                                <div
-                                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110"
-                                    style={{
-                                        backgroundColor: `${agent.color}15`,
-                                    }}
-                                >
-                                    <agent.icon
-                                        className="w-6 h-6"
-                                        style={{ color: agent.color }}
+                                <div className="relative mb-6 group/icon">
+                                    {/* Glow effect behind */}
+                                    <div
+                                        className="absolute inset-0 rounded-full blur-2xl opacity-40 group-hover/icon:opacity-70 transition-opacity duration-500 scale-150"
+                                        style={{ backgroundColor: agent.color }}
                                     />
+
+                                    {/* Floating animation wrapper */}
+                                    <div
+                                        className="relative w-16 h-16 rounded-2xl flex items-center justify-center animate-[float_3s_ease-in-out_infinite] transition-transform duration-300 group-hover:scale-110"
+                                        style={{ backgroundColor: `${agent.color}20` }}
+                                    >
+                                        <agent.icon
+                                            className="w-8 h-8"
+                                            style={{ color: agent.color }}
+                                            strokeWidth={1.5}
+                                        />
+                                    </div>
                                 </div>
 
                                 {/* Content */}

@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GlassCard } from "./GlassCard";
-import { Bot, Code, Zap, Cpu, Network, ArrowRight } from "lucide-react";
+import { Bot, Code, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function BentoGrid() {
@@ -98,48 +97,6 @@ export default function BentoGrid() {
                                 <p>{"}"}</p>
                             </div>
                             <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent" />
-                        </div>
-                    </div>
-                </motion.div>
-
-                {/* Small Card: Integration */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.3 }}
-                    className="md:col-span-1 row-span-1 relative group overflow-hidden rounded-3xl"
-                >
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#ff5145]/10 to-[#8656ff]/10 backdrop-blur-xl border border-white/10 p-8 flex flex-col justify-between transition-all duration-500 group-hover:border-[#ff5145]/30">
-                        <div>
-                            <div className="w-12 h-12 rounded-xl bg-[#ff5145]/20 flex items-center justify-center mb-4">
-                                <Network className="w-6 h-6 text-[#ff5145]" />
-                            </div>
-                            <h3 className="text-xl font-bold text-white mb-2">Seamless Integration</h3>
-                            <p className="text-sm text-zinc-400">
-                                We connect your existing tools into one unified ecosystem.
-                            </p>
-                        </div>
-                    </div>
-                </motion.div>
-
-                {/* Small Card: Infinite Scale */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.4 }}
-                    className="md:col-span-1 row-span-1 relative group overflow-hidden rounded-3xl"
-                >
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#6effc5]/10 to-[#8656ff]/10 backdrop-blur-xl border border-white/10 p-8 flex flex-col justify-between transition-all duration-500 group-hover:border-[#6effc5]/30">
-                        <div>
-                            <div className="w-12 h-12 rounded-xl bg-[#6effc5]/20 flex items-center justify-center mb-4">
-                                <Cpu className="w-6 h-6 text-[#6effc5]" />
-                            </div>
-                            <h3 className="text-xl font-bold text-white mb-2">Infinite Scale</h3>
-                            <p className="text-sm text-zinc-400">
-                                Infrastructure that grows with your business, zero headaches.
-                            </p>
                         </div>
                     </div>
                 </motion.div>

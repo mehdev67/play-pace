@@ -1,5 +1,6 @@
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
+import { Great_Vibes } from 'next/font/google';
 import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
@@ -8,6 +9,12 @@ import ClientLayoutWrapper from "@/components/ClientLayoutWrapper"; // Import th
 import OceanBackground from "@/components/OceanBackground";
 import { Toaster } from "@/components/ui/toaster";
 import SupportChat from "@/components/SupportChat";
+
+const greatVibes = Great_Vibes({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-great-vibes',
+});
 
 
 export const metadata: Metadata = {
@@ -46,7 +53,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`dark ${GeistSans.variable} ${GeistMono.variable}`}>
+    <html lang="en" className={`dark ${GeistSans.variable} ${GeistMono.variable} ${greatVibes.variable}`}>
       <body className="antialiased font-sans">
         <ClientLayoutWrapper> {/* Use the wrapper here */}
           <OceanBackground />

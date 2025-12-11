@@ -12,7 +12,7 @@ About PlayPace:
 Our AI Products (ready to use):
 1. Receptionista - AI-powered receptionist that handles calls, books meetings, and answers questions 24/7
 2. Notario - Smart document AI for review, signing, and archiving
-3. ClientScreen - Digital signage system for waiting rooms with queue management and branding
+3. ClientScreen - AI-driven client onboarding system that automates lead capture, quotes, contracts, invoices, and follow-ups
 
 Our Services (Build/Develop):
 1. AI Agents - Intelligent agents that automate tasks

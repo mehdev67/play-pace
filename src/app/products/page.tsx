@@ -9,8 +9,7 @@ import {
     Sparkles,
 } from "lucide-react";
 import NextImage from "next/image";
-
-import { GlassCard } from "@/components/GlassCard";
+import { GlassCard as LiquidGlassCard, GlassButton } from "react-glass-ui";
 
 const products = [
     {
@@ -55,16 +54,16 @@ const products = [
         id: "clientscreen",
         icon: "/icons/clientscreen.png",
         title: "ClientScreen",
-        tagline: "Digital signage system",
+        tagline: "AI-driven client onboarding",
         description:
-            "Transform your waiting areas with dynamic digital displays. Show queues, information, and branded content to engage your clients.",
+            "Automated onboarding and client management system. From lead capture to signed contracts and invoices – completely hands-off.",
         features: [
-            "Queue management",
-            "Real-time updates",
-            "Custom branding",
-            "Multi-screen support",
-            "Content scheduling",
-            "Analytics dashboard",
+            "Auto lead capture",
+            "AI qualification",
+            "Auto quotes & proposals",
+            "E-sign integration",
+            "Auto invoicing",
+            "CRM integrations",
         ],
 
         gradient: "from-emerald-500 to-teal-500",
@@ -123,19 +122,30 @@ export default function ProductsPage() {
                             )}
 
                             {/* Icon */}
-                            <div className="inline-flex p-4 rounded-2xl mb-6 relative">
-                                <NextImage
-                                    src={product.icon}
-                                    alt={product.title}
-                                    width={96}
-                                    height={96}
-                                    className="w-20 h-20 drop-shadow-2xl hover:scale-110 transition-transform duration-300"
-                                />
+                            <div className="relative mb-8 group/icon">
+                                {/* Floating animation wrapper */}
+                                <div className="relative animate-[float_3s_ease-in-out_infinite]">
+                                    <NextImage
+                                        src={product.icon}
+                                        alt={product.title}
+                                        width={160}
+                                        height={160}
+                                        className="w-32 h-32 hover:scale-110 transition-all duration-500"
+                                    />
+                                </div>
                             </div>
 
                             {/* Content */}
-                            <h3 className="text-2xl font-bold text-white mb-2">
+                            <h3 className="text-2xl font-bold text-white mb-2 flex items-center gap-3">
                                 {product.title}
+                                {product.id === "receptionista" && (
+                                    <span
+                                        className="px-4 py-1.5 rounded-full bg-gradient-to-r from-[#ff5145]/20 to-[#8656ff]/20 border border-[#ff5145]/40 text-[#ff5145] text-2xl shadow-[0_0_20px_rgba(255,81,69,0.4)] animate-pulse"
+                                        style={{ fontFamily: 'var(--font-great-vibes)' }}
+                                    >
+                                        G<span className="text-lg">ia</span>
+                                    </span>
+                                )}
                             </h3>
                             <p className="text-cyan-400 font-medium mb-4">{product.tagline}</p>
                             <p className="text-zinc-400 mb-6 leading-relaxed">
@@ -172,7 +182,7 @@ export default function ProductsPage() {
 
 
 
-                {/* CTA with GlassCard */}
+                {/* CTA with LiquidGlassCard */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -182,14 +192,29 @@ export default function ProductsPage() {
                     <h2 className="text-2xl font-bold text-white mb-8 text-center">
                         Need a Custom AI Solution?
                     </h2>
-                    <GlassCard
-                        label="Enterprise"
-                        title="Custom AI Development"
-                        description="Let's build something tailored to your needs. Our team specializes in creating bespoke AI solutions that scale with your business."
-                        ctaText="Start Your Project"
-                        href="/start-project"
-                        metadata={{ left: "", right: "Free consultation" }}
-                    />
+                    <LiquidGlassCard
+                        width={400}
+                        blur={8}
+                        distortion={15}
+                        borderRadius={20}
+                        borderOpacity={0.3}
+                        backgroundColor="#8656ff"
+                        backgroundOpacity={0.1}
+                        innerLightBlur={20}
+                        innerLightColor="#6effc5"
+                        onHoverScale={1.02}
+                        flexibility={0.5}
+                        className="p-8 text-center"
+                    >
+                        <span className="text-sm text-[#6effc5] font-medium mb-2 block">Enterprise</span>
+                        <h3 className="text-2xl font-bold text-white mb-4">Custom AI Development</h3>
+                        <p className="text-zinc-400 mb-6">
+                            Let's build something tailored to your needs. Our team specializes in creating bespoke AI solutions that scale with your business.
+                        </p>
+                        <Link href="/start-project" className="btn-gradient inline-flex items-center gap-2">
+                            Start Your Project <ArrowRight className="w-4 h-4" />
+                        </Link>
+                    </LiquidGlassCard>
                 </motion.div>
             </div>
         </div>
