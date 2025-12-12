@@ -33,7 +33,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-screen flex items-start pt-48 sm:pt-40 md:items-center md:pt-0 md:-mt-32 justify-center overflow-hidden">
             <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
 
                 {/* Main Headline */}
@@ -41,10 +41,9 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.1 }}
-                    className="text-5xl sm:text-6xl lg:text-8xl font-bold tracking-tight mb-6"
+                    className="text-6xl sm:text-7xl lg:text-[10rem] xl:text-[12rem] 2xl:text-[16rem] font-bold mb-6"
                 >
-                    <span className="text-zinc-900">We </span>
-                    <span className="relative inline-block min-w-[200px] sm:min-w-[300px] lg:min-w-[420px] text-left">
+                    <span className="relative inline-block text-center">
                         <AnimatePresence mode="wait">
                             <motion.span
                                 key={currentIndex}

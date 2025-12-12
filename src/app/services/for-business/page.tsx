@@ -187,7 +187,7 @@ export default function ForBusinessPage() {
                                 {/* Price & CTA */}
                                 <div className="mt-auto">
                                     <Link
-                                        href={product.id === "inkassera" ? "/products/inkassera" : "/start-project"}
+                                        href={`/products/${product.id}`}
                                         className={`w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-medium transition-all text-zinc-900 shadow-lg bg-white/20 backdrop-blur-md border border-${product.accentColor}-500/30 hover:shadow-xl hover:scale-[1.02]`}
                                     >
                                         <span>{product.buttonText || "Get Started"}</span>
