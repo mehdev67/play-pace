@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Code, Package, MessageSquare, Briefcase } from "lucide-react";
+import { MetallicPillButton } from "@/components/ui/MetallicPillButton";
 import type { LucideIcon } from "lucide-react";
 
 interface NavItem {
@@ -92,11 +93,10 @@ export default function Navigation() {
 
                     {/* CTA Button */}
                     <div className="hidden lg:flex items-center gap-4">
-                        <Link
-                            href="/start-project"
-                            className="btn-gradient text-sm !py-2.5 !px-5 shadow-sm"
-                        >
-                            <span>Get Started</span>
+                        <Link href="/start-project">
+                            <MetallicPillButton size="sm">
+                                Get Started
+                            </MetallicPillButton>
                         </Link>
                     </div>
 
@@ -161,20 +161,10 @@ export default function Navigation() {
                                 transition={{ delay: navItems.length * 0.05 + 0.1 }}
                                 className="w-full space-y-4"
                             >
-                                <Link
-                                    href="/start-project"
-                                    onClick={() => setIsOpen(false)}
-                                    className="btn-gradient w-full text-center block !py-4 rounded-xl shadow-md"
-                                >
-                                    <span
-                                        className="uppercase tracking-[0.15em] text-base"
-                                        style={{
-                                            fontFamily: "'Inter', sans-serif",
-                                            fontWeight: 400,
-                                        }}
-                                    >
+                                <Link href="/start-project" onClick={() => setIsOpen(false)}>
+                                    <MetallicPillButton fullWidth>
                                         Get Started
-                                    </span>
+                                    </MetallicPillButton>
                                 </Link>
                             </motion.div>
                         </div>

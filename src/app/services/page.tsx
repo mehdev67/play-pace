@@ -4,7 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { useState, useRef } from "react";
 import { Sparkles, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { MetallicPillButton } from "@/components/ui/MetallicPillButton";
+import { GlowBadge } from "@/components/ui/GlowBadge";
 
 type TransitionType = "brand" | "business" | null;
 
@@ -72,11 +73,10 @@ export default function ServicesPage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center mb-16"
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-600/5 border border-blue-600/10 backdrop-blur-md mb-6 transition-all duration-300 hover:scale-105 hover:bg-blue-600/10 hover:border-blue-600/40 hover:shadow-[0_0_20px_-3px_rgba(37,99,235,0.5)]">
-                        <Sparkles className="w-4 h-4 text-blue-600" strokeWidth={1.5} />
-                        <span className="text-sm font-medium text-blue-600">
-                            Our Services
-                        </span>
+                    <div className="mb-6">
+                        <GlowBadge icon={<Sparkles className="w-4 h-4 text-blue-600" strokeWidth={1.5} />}>
+                            <span className="text-blue-600">Our Services</span>
+                        </GlowBadge>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-800 mb-8">
@@ -108,15 +108,12 @@ export default function ServicesPage() {
                             transition={{ delay: 0.1 }}
                             className="w-full sm:w-auto"
                         >
-                            <Button
+                            <MetallicPillButton
                                 ref={brandButtonRef}
-                                size="lg"
                                 onClick={() => handleTransition("brand", "www.2g2btm.com", brandButtonRef)}
-                                className="relative w-full sm:w-auto h-14 px-8 text-lg font-semibold text-zinc-900 bg-white/10 backdrop-blur-md border border-red-500/30 rounded-xl shadow-[0_0_10px_rgba(255,0,0,0.5)] hover:shadow-[0_0_20px_rgba(255,0,0,0.5)] hover:bg-white/20 hover:text-red-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500/50 active:bg-white/20 transition-all duration-300 hover:scale-105"
                             >
                                 Brand Services
-                                <ArrowRight className="w-5 h-5" />
-                            </Button>
+                            </MetallicPillButton>
                         </motion.div>
 
                         {/* Business Services Button */}
@@ -126,15 +123,12 @@ export default function ServicesPage() {
                             transition={{ delay: 0.2 }}
                             className="w-full sm:w-auto"
                         >
-                            <Button
+                            <MetallicPillButton
                                 ref={businessButtonRef}
-                                size="lg"
                                 onClick={() => handleTransition("business", "/services/for-business", businessButtonRef)}
-                                className="relative w-full sm:w-auto h-14 px-8 text-lg font-semibold text-zinc-900 bg-white/10 backdrop-blur-md border border-blue-500/30 rounded-xl shadow-[0_0_10px_rgba(0,0,255,0.5)] hover:shadow-[0_0_20px_rgba(0,0,255,0.5)] hover:bg-white/20 hover:text-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50 active:bg-white/20 transition-all duration-300 hover:scale-105"
                             >
                                 Business Services
-                                <ArrowRight className="w-5 h-5" />
-                            </Button>
+                            </MetallicPillButton>
                         </motion.div>
                     </div>
                 </motion.div>

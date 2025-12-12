@@ -13,6 +13,8 @@ import {
     TrendingUp,
     ShieldCheck,
 } from "lucide-react";
+import { MetallicPillButton } from "@/components/ui/MetallicPillButton";
+import { GlowBadge } from "@/components/ui/GlowBadge";
 
 const agents = [
     {
@@ -131,11 +133,10 @@ export default function AIAgentsPage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center mb-16"
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#8656ff]/5 border border-[#6effc5]/20 backdrop-blur-md shadow-[0_0_15px_-3px_rgba(134,86,255,0.3)] mb-6 transition-all duration-300 hover:scale-105">
-                        <Bot className="w-4 h-4 text-[#6effc5]" />
-                        <span className="text-sm font-medium text-[#6effc5]">
-                            AI Agents
-                        </span>
+                    <div className="mb-6">
+                        <GlowBadge icon={<Bot className="w-4 h-4 text-[#6effc5]" />}>
+                            <span className="text-[#6effc5]">AI Agents</span>
+                        </GlowBadge>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-900 mb-6">
@@ -241,11 +242,10 @@ export default function AIAgentsPage() {
                             Tell us about your challenges and we&apos;ll design a custom AI agent
                             to solve them.
                         </p>
-                        <Link href="/start-project" className="btn-gradient group">
-                            <span className="flex items-center gap-2">
+                        <Link href="/start-project">
+                            <MetallicPillButton>
                                 Start Project
-                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                            </span>
+                            </MetallicPillButton>
                         </Link>
                     </div>
                 </motion.div>

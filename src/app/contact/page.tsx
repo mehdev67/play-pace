@@ -15,6 +15,8 @@ import {
     Send,
 } from "lucide-react";
 import { GlassCard } from "react-glass-ui";
+import { MetallicPillButton } from "@/components/ui/MetallicPillButton";
+import { GlowBadge } from "@/components/ui/GlowBadge";
 
 export default function ContactPage() {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -106,11 +108,10 @@ export default function ContactPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5 }}
                     >
-                        <Link href="/" className="btn-gradient inline-flex">
-                            <span className="flex items-center gap-2">
+                        <Link href="/">
+                            <MetallicPillButton>
                                 Back to Home
-                                <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
-                            </span>
+                            </MetallicPillButton>
                         </Link>
                     </motion.div>
                 </motion.div>
@@ -129,11 +130,10 @@ export default function ContactPage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center mb-12"
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-600/5 border border-purple-600/10 backdrop-blur-md mb-6 transition-all duration-300 hover:scale-105 hover:bg-purple-600/10 hover:border-purple-600/40 hover:shadow-[0_0_20px_-3px_rgba(147,51,234,0.5)]">
-                        <MessageSquare className="w-4 h-4 text-purple-600" strokeWidth={1.5} />
-                        <span className="text-sm font-medium text-purple-600">
-                            Contact Us
-                        </span>
+                    <div className="mb-6">
+                        <GlowBadge icon={<MessageSquare className="w-4 h-4 text-purple-600" strokeWidth={1.5} />}>
+                            <span className="text-purple-600">Contact Us</span>
+                        </GlowBadge>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-900 mb-6">
@@ -193,7 +193,7 @@ export default function ContactPage() {
                         borderOpacity={0.15}
                         backgroundColor="#ffffff"
                         backgroundOpacity={0.03}
-                        className="p-8 lg:p-12"
+                        className="p-8 lg:p-12 overflow-hidden"
                     >
                         <form onSubmit={handleSubmit} className="space-y-6">
                             {/* Personal Info */}
@@ -306,26 +306,26 @@ export default function ContactPage() {
                             </div>
 
                             {/* Submit */}
-                            <button
-                                type="submit"
-                                disabled={isSubmitting}
-                                className="btn-gradient w-full !py-4 disabled:opacity-50 group"
-                            >
-                                <span className="flex items-center justify-center gap-2">
+                            <div className="w-full">
+                                <MetallicPillButton
+                                    type="submit"
+                                    disabled={isSubmitting}
+                                    fullWidth
+                                    noGlow
+                                >
                                     {isSubmitting ? (
-                                        <>
+                                        <span className="flex items-center gap-2">
                                             <Loader2 className="w-5 h-5 animate-spin" strokeWidth={1.5} />
                                             Sending...
-                                        </>
+                                        </span>
                                     ) : (
-                                        <>
+                                        <span className="flex items-center gap-2">
                                             <Send className="w-5 h-5" strokeWidth={1.5} />
                                             Send Message
-                                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" strokeWidth={1.5} />
-                                        </>
+                                        </span>
                                     )}
-                                </span>
-                            </button>
+                                </MetallicPillButton>
+                            </div>
 
                             <p className="text-center text-sm text-zinc-500">
                                 We typically respond within 24 hours

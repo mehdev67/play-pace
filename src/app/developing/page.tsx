@@ -16,6 +16,8 @@ import {
 } from "lucide-react";
 import NextImage from "next/image";
 import { GlassCard } from "react-glass-ui";
+import { MetallicPillButton } from "@/components/ui/MetallicPillButton";
+import { GlowBadge } from "@/components/ui/GlowBadge";
 
 const services = [
     {
@@ -151,11 +153,10 @@ export default function DevelopingPage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center mb-16"
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-600/5 border border-purple-600/10 backdrop-blur-md mb-6 transition-all duration-300 hover:scale-105">
-                        <Sparkles className="w-4 h-4 text-purple-600" strokeWidth={1.5} />
-                        <span className="text-sm font-medium text-purple-600">
-                            Build / Develop
-                        </span>
+                    <div className="mb-6">
+                        <GlowBadge icon={<Sparkles className="w-4 h-4 text-purple-600" strokeWidth={1.5} />}>
+                            <span className="text-purple-600">Build / Develop</span>
+                        </GlowBadge>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-900 mb-6">
@@ -229,20 +230,16 @@ export default function DevelopingPage() {
                                 {/* Price & CTA */}
                                 <div className="mt-auto space-y-3">
                                     {service.exploreLink ? (
-                                        <Link
-                                            href={service.exploreLink}
-                                            className="w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-medium transition-all btn-gradient"
-                                        >
-                                            <span>Explore</span>
-                                            <ArrowRight className="w-4 h-4" />
+                                        <Link href={service.exploreLink}>
+                                            <MetallicPillButton size="sm">
+                                                Explore
+                                            </MetallicPillButton>
                                         </Link>
                                     ) : (
-                                        <Link
-                                            href="/start-project"
-                                            className={`w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-medium transition-all text-zinc-900 shadow-lg bg-white/20 backdrop-blur-md border border-${service.accentColor}-500/30 hover:shadow-xl hover:scale-[1.02]`}
-                                        >
-                                            <span>Get Started</span>
-                                            <ArrowRight className="w-4 h-4" />
+                                        <Link href="/start-project">
+                                            <MetallicPillButton size="sm">
+                                                Get Started
+                                            </MetallicPillButton>
                                         </Link>
                                     )}
                                 </div>
@@ -308,11 +305,10 @@ export default function DevelopingPage() {
                     <p className="text-zinc-600 mb-8">
                         Let's build the systems that build your business.
                     </p>
-                    <Link href="/start-project" className="btn-gradient inline-flex">
-                        <span className="flex items-center gap-2">
+                    <Link href="/start-project">
+                        <MetallicPillButton>
                             Start Your Project
-                            <ArrowRight className="w-4 h-4" />
-                        </span>
+                        </MetallicPillButton>
                     </Link>
                 </motion.div>
             </div>

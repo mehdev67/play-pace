@@ -10,6 +10,8 @@ import {
 } from "lucide-react";
 import NextImage from "next/image";
 import { GlassCard } from "react-glass-ui";
+import { MetallicPillButton } from "@/components/ui/MetallicPillButton";
+import { GlowBadge } from "@/components/ui/GlowBadge";
 import OceanBackground from "@/components/OceanBackground";
 
 const products = [
@@ -112,11 +114,10 @@ export default function ForBusinessPage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center mb-16"
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-700/10 border border-zinc-700/20 backdrop-blur-md mb-6 transition-all duration-300 hover:scale-105 hover:bg-zinc-700/20 hover:border-zinc-700/40 hover:shadow-[0_0_20px_-3px_rgba(63,63,70,0.5)]">
-                        <Sparkles className="w-4 h-4 text-zinc-700" strokeWidth={1.5} />
-                        <span className="text-sm font-medium text-zinc-700">
-                            For Business
-                        </span>
+                    <div className="mb-6">
+                        <GlowBadge icon={<Sparkles className="w-4 h-4 text-zinc-700" strokeWidth={1.5} />}>
+                            <span className="text-zinc-700">For Business</span>
+                        </GlowBadge>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-900 mb-4">
@@ -201,39 +202,27 @@ export default function ForBusinessPage() {
 
 
 
-                {/* CTA with LiquidGlassCard */}
+                {/* Simple CTA Section */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ delay: 0.8 }}
-                    className="mt-16 flex flex-col items-center"
+                    className="mt-24 text-center max-w-2xl mx-auto"
                 >
-                    <h2 className="text-2xl font-bold text-zinc-900 mb-8 text-center">
-                        Need a Custom AI Solution?
+                    <span className="text-sm text-purple-600 font-semibold uppercase tracking-wider mb-3 block">
+                        Enterprise
+                    </span>
+                    <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 mb-4">
+                        Need a Custom Solution?
                     </h2>
-                    <GlassCard
-                        width={400}
-                        blur={8}
-                        distortion={15}
-                        borderRadius={20}
-                        borderOpacity={0.3}
-                        backgroundColor="#3f3f46"
-                        backgroundOpacity={0.08}
-                        innerLightBlur={20}
-                        innerLightColor="#71717a"
-                        onHoverScale={1.02}
-                        flexibility={0.5}
-                        className="p-8 text-center border-2 border-blue-200/50 shadow-lg ring-1 ring-blue-400/30 hover:ring-blue-500/50 hover:border-blue-300 transition-all duration-300"
-                    >
-                        <span className="text-sm text-zinc-700 font-medium mb-2 block">Enterprise</span>
-                        <h3 className="text-2xl font-bold text-zinc-900 mb-4">Custom AI Development</h3>
-                        <p className="text-zinc-600 mb-6">
-                            Let's build something tailored to your needs. Our team specializes in creating bespoke AI solutions that scale with your business.
-                        </p>
-                        <Link href="/start-project" className="inline-flex items-center gap-2 py-3 px-6 rounded-xl font-medium text-zinc-900 bg-white/20 backdrop-blur-md border border-blue-500/30 shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all">
-                            Start Your Project <ArrowRight className="w-4 h-4" />
-                        </Link>
-                    </GlassCard>
+                    <p className="text-lg text-zinc-600 mb-8">
+                        Let's build something tailored to your needs. Our team specializes in creating bespoke solutions that scale with your business.
+                    </p>
+                    <Link href="/start-project">
+                        <MetallicPillButton>
+                            Start Your Project
+                        </MetallicPillButton>
+                    </Link>
                 </motion.div>
             </div>
         </div>

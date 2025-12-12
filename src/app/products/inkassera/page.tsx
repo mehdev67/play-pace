@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Lock, ArrowRight } from "lucide-react";
+import { Lock, ArrowRight, Loader2 } from "lucide-react";
+import { MetallicPillButton } from "@/components/ui/MetallicPillButton";
 import { GlassCard } from "react-glass-ui";
 
 export default function InkasseraPage() {
@@ -125,13 +126,13 @@ export default function InkasseraPage() {
                                 )}
                             </div>
 
-                            <button
+                            <MetallicPillButton
                                 type="submit"
-                                className="w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-medium transition-all text-zinc-900 shadow-lg bg-white/20 backdrop-blur-md border border-emerald-500/30 hover:shadow-xl hover:scale-[1.02]"
+                                fullWidth
+                                noGlow
                             >
-                                <span>Access Demo</span>
-                                <ArrowRight className="w-4 h-4" />
-                            </button>
+                                Access Demo
+                            </MetallicPillButton>
                         </form>
 
                         <p className="text-xs text-zinc-500 text-center mt-6">

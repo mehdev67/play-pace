@@ -3,13 +3,14 @@
 import { useState } from "react";
 import LoadingScreen from "@/components/LoadingScreen";
 import { motion } from "framer-motion";
+import { MetallicPillButton } from "@/components/ui/MetallicPillButton";
 
 export default function LoadingDemoPage() {
     const [showLoading, setShowLoading] = useState(true);
 
     return (
         <div className="min-h-screen pt-16 sm:pt-24 pb-16 sm:pb-20">
-            
+
 
             {showLoading && <LoadingScreen onComplete={() => setShowLoading(false)} />}
 
@@ -26,12 +27,9 @@ export default function LoadingDemoPage() {
                         The epic loading animation has completed. Click the button below to see
                         it again!
                     </p>
-                    <button
-                        onClick={() => setShowLoading(true)}
-                        className="btn-gradient"
-                    >
-                        <span>Replay Animation</span>
-                    </button>
+                    <MetallicPillButton onClick={() => setShowLoading(true)}>
+                        Replay Animation
+                    </MetallicPillButton>
                 </motion.div>
             </div>
         </div>

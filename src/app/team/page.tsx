@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { Sparkles, Linkedin, Twitter, Mail } from "lucide-react";
 import { GlassCard } from "react-glass-ui";
+import { MetallicPillButton } from "@/components/ui/MetallicPillButton";
+import { GlowBadge } from "@/components/ui/GlowBadge";
 
 const team = [
     {
@@ -67,9 +69,10 @@ export default function TeamPage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center mb-16"
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 mb-6">
-                        <Sparkles className="w-4 h-4 text-purple-400" strokeWidth={1.5} />
-                        <span className="text-sm text-purple-400 font-medium">Team PlayPace</span>
+                    <div className="mb-6">
+                        <GlowBadge icon={<Sparkles className="w-4 h-4 text-purple-400" strokeWidth={1.5} />}>
+                            <span className="text-purple-400">Team PlayPace</span>
+                        </GlowBadge>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-900 mb-6">
@@ -170,11 +173,10 @@ export default function TeamPage() {
                             We're always looking for talented engineers, designers, and AI enthusiasts.
                             If you're passionate about building the future, we want to hear from you.
                         </p>
-                        <a
-                            href="mailto:careers@playpace.net"
-                            className="btn-gradient inline-flex"
-                        >
-                            <span>Get in Touch</span>
+                        <a href="mailto:careers@playpace.net">
+                            <MetallicPillButton>
+                                Get in Touch
+                            </MetallicPillButton>
                         </a>
                     </GlassCard>
                 </motion.div>

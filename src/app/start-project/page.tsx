@@ -18,6 +18,8 @@ import {
     Sparkles,
 } from "lucide-react";
 import { GlassCard } from "react-glass-ui";
+import { MetallicPillButton } from "@/components/ui/MetallicPillButton";
+import { GlowBadge } from "@/components/ui/GlowBadge";
 
 export default function StartProjectPage() {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -110,11 +112,10 @@ export default function StartProjectPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5 }}
                     >
-                        <Link href="/" className="btn-gradient inline-flex">
-                            <span className="flex items-center gap-2">
+                        <Link href="/">
+                            <MetallicPillButton>
                                 Back to Home
-                                <ArrowRight className="w-4 h-4" />
-                            </span>
+                            </MetallicPillButton>
                         </Link>
                     </motion.div>
                 </motion.div>
@@ -133,11 +134,10 @@ export default function StartProjectPage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center mb-12"
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 mb-6">
-                        <Rocket className="w-4 h-4 text-purple-400" />
-                        <span className="text-sm text-purple-400 font-medium">
-                            Start Your Project
-                        </span>
+                    <div className="mb-6">
+                        <GlowBadge icon={<Rocket className="w-4 h-4 text-purple-400" />}>
+                            <span className="text-purple-400">Start Your Project</span>
+                        </GlowBadge>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-900 mb-6">
@@ -163,7 +163,7 @@ export default function StartProjectPage() {
                         borderOpacity={0.3}
                         backgroundColor="#ffffff"
                         backgroundOpacity={0.6}
-                        className="p-8 lg:p-12 border border-zinc-200 shadow-lg"
+                        className="p-8 lg:p-12 border border-zinc-200 shadow-lg overflow-hidden"
                     >
                         <form onSubmit={handleSubmit} className="space-y-6">
                             {/* Personal Info */}
@@ -361,26 +361,26 @@ export default function StartProjectPage() {
                             </div>
 
                             {/* Submit */}
-                            <button
-                                type="submit"
-                                disabled={isSubmitting}
-                                className="btn-gradient w-full !py-4 disabled:opacity-50 group"
-                            >
-                                <span className="flex items-center justify-center gap-2">
+                            <div className="w-full">
+                                <MetallicPillButton
+                                    type="submit"
+                                    disabled={isSubmitting}
+                                    fullWidth
+                                    noGlow
+                                >
                                     {isSubmitting ? (
-                                        <>
+                                        <span className="flex items-center gap-2">
                                             <Loader2 className="w-5 h-5 animate-spin" />
                                             Submitting...
-                                        </>
+                                        </span>
                                     ) : (
-                                        <>
+                                        <span className="flex items-center gap-2">
                                             <Rocket className="w-5 h-5" />
                                             Start Your Project
-                                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                                        </>
+                                        </span>
                                     )}
-                                </span>
-                            </button>
+                                </MetallicPillButton>
+                            </div>
 
                             <p className="text-center text-sm text-zinc-500">
                                 We'll review your request and get back to you within 24 hours
