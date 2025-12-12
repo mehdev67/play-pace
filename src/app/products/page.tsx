@@ -30,7 +30,10 @@ const products = [
 
         gradient: "from-cyan-500 to-blue-500",
         popular: true,
-        accentColor: "cyan",
+        textColor: "text-cyan-600",
+        borderColor: "border-cyan-200/50",
+        ringColor: "ring-cyan-500/20 hover:ring-cyan-500/50",
+        btnBorder: "border-cyan-500/30",
     },
     {
         id: "notario",
@@ -50,7 +53,10 @@ const products = [
 
         gradient: "from-purple-500 to-pink-500",
         popular: false,
-        accentColor: "purple",
+        textColor: "text-purple-600",
+        borderColor: "border-purple-200/50",
+        ringColor: "ring-purple-500/20 hover:ring-purple-500/50",
+        btnBorder: "border-purple-500/30",
     },
     {
         id: "clientscreen",
@@ -70,7 +76,10 @@ const products = [
 
         gradient: "from-emerald-500 to-teal-500",
         popular: false,
-        accentColor: "emerald",
+        textColor: "text-emerald-600",
+        borderColor: "border-emerald-200/50",
+        ringColor: "ring-emerald-500/20 hover:ring-emerald-500/50",
+        btnBorder: "border-emerald-500/30",
     },
 ];
 
@@ -107,14 +116,28 @@ export default function ProductsPage() {
                 </motion.div>
 
                 {/* Products Grid */}
-                <div ref={ref} className="grid lg:grid-cols-3 gap-8 mb-24">
+                <div ref={ref} className="grid lg:grid-cols-3 gap-8 mb-24 mt-16">
                     {products.map((product, i) => (
                         <motion.div
                             key={product.id}
                             initial={{ opacity: 0, y: 40 }}
                             animate={isInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ delay: i * 0.1, duration: 0.5 }}
+                            className="relative pt-16"
                         >
+                            {/* Floating Icon - Outside the card */}
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20">
+                                <div className="animate-[float_3s_ease-in-out_infinite] -translate-y-16 hover:-translate-y-20 hover:scale-110 transition-all duration-500 ease-out">
+                                    <NextImage
+                                        src={product.icon}
+                                        alt={product.title}
+                                        width={160}
+                                        height={160}
+                                        className="w-32 h-32 object-contain hover:scale-125 transition-all duration-500 drop-shadow-2xl"
+                                    />
+                                </div>
+                            </div>
+
                             <GlassCard
                                 blur={12}
                                 borderRadius={24}
@@ -122,28 +145,14 @@ export default function ProductsPage() {
                                 backgroundColor="#ffffff"
                                 backgroundOpacity={0.4}
                                 onHoverScale={1.02}
-                                className={`p-6 sm:p-8 flex flex-col items-center text-center h-full border shadow-sm ring-1 ring-${product.accentColor}-500/20 border-${product.accentColor}-200/50 hover:ring-${product.accentColor}-500/50 transition-all duration-300`}
+                                className={`p-6 sm:p-8 pt-20 flex flex-col items-center text-center h-full border shadow-sm ring-1 ${product.ringColor} ${product.borderColor} transition-all duration-300`}
                             >
-
-
-                                {/* Icon */}
-                                <div className="relative mb-6 group/icon flex justify-center w-full">
-                                    <div className="relative animate-[float_3s_ease-in-out_infinite]">
-                                        <NextImage
-                                            src={product.icon}
-                                            alt={product.title}
-                                            width={160}
-                                            height={160}
-                                            className="w-32 h-32 object-contain mx-auto hover:scale-110 transition-all duration-500"
-                                        />
-                                    </div>
-                                </div>
 
                                 {/* Content */}
                                 <h3 className="text-2xl font-bold text-zinc-900 mb-2 flex items-center justify-center gap-3">
                                     {product.title}
                                 </h3>
-                                <p className={`text-${product.accentColor}-600 font-medium mb-4`}>{product.tagline}</p>
+                                <p className={`${product.textColor} font-medium mb-4`}>{product.tagline}</p>
                                 <p className="text-zinc-600 mb-6 leading-relaxed">
                                     {product.description}
                                 </p>
@@ -164,7 +173,7 @@ export default function ProductsPage() {
                                 <div className="mt-auto">
                                     <Link
                                         href={`/products/${product.id}`}
-                                        className={`w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-medium transition-all text-zinc-900 shadow-lg bg-white/20 backdrop-blur-md border border-${product.accentColor}-500/30 hover:shadow-xl hover:scale-[1.02]`}
+                                        className={`w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-medium transition-all text-zinc-900 shadow-lg bg-white/20 backdrop-blur-md border ${product.btnBorder} hover:shadow-xl hover:scale-[1.02]`}
                                     >
                                         <span>Get Started</span>
                                         <ArrowRight className="w-4 h-4" />
