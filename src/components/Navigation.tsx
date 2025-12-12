@@ -1,12 +1,19 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useCallback, memo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Code, Package, MessageSquare, Briefcase, ChevronDown } from "lucide-react";
+import { Menu, X, Code, Package, MessageSquare, Briefcase } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
-const navItems = [
+interface NavItem {
+    name: string;
+    href: string;
+    icon?: LucideIcon;
+}
+
+const navItems: NavItem[] = [
     { name: "Home", href: "/" },
     { name: "Build / Develop", href: "/developing", icon: Code },
     { name: "AI Products", href: "/products", icon: Package },
@@ -15,16 +22,39 @@ const navItems = [
     { name: "Contact", href: "/contact", icon: MessageSquare },
 ];
 
+// Memoized nav link component for better performance
+const NavLink = memo(function NavLink({ item }: { item: NavItem }) {
+    const Icon = item.icon;
+    return (
+        <Link
+            href={item.href}
+            className="relative px-4 py-2 text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors group"
+        >
+            <span className="flex items-center gap-2">
+                {Icon && <Icon className="w-4 h-4" strokeWidth={1.5} />}
+                {item.name}
+            </span>
+            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-zinc-800 group-hover:w-3/4 transition-all duration-300" />
+        </Link>
+    );
+});
+
 export default function Navigation() {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
-    const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
     useEffect(() => {
+        let ticking = false;
         const handleScroll = () => {
-            setScrolled(window.scrollY > 20);
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    setScrolled(window.scrollY > 20);
+                    ticking = false;
+                });
+                ticking = true;
+            }
         };
-        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
@@ -56,17 +86,7 @@ export default function Navigation() {
                     {/* Desktop Navigation */}
                     <div className="hidden lg:flex items-center gap-1">
                         {navItems.map((item) => (
-                            <Link
-                                key={item.name}
-                                href={item.href}
-                                className="relative px-4 py-2 text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors group"
-                            >
-                                <span className="flex items-center gap-2">
-                                    {item.icon && <item.icon className="w-4 h-4" />}
-                                    {item.name}
-                                </span>
-                                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-zinc-800 group-hover:w-3/4 transition-all duration-300 shimmer-line" />
-                            </Link>
+                            <NavLink key={item.name} item={item} />
                         ))}
                     </div>
 
