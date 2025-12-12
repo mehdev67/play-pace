@@ -133,6 +133,7 @@ export default function ProductsPage() {
                                         alt={product.title}
                                         width={160}
                                         height={160}
+                                        priority
                                         className="w-32 h-32 object-contain hover:scale-125 transition-all duration-500 drop-shadow-2xl"
                                     />
                                 </div>
