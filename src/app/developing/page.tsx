@@ -14,10 +14,10 @@ import {
     Plug,
     Rocket,
 } from "lucide-react";
-import NextImage from "next/image";
 import { GlassCard } from "react-glass-ui";
 import { MetallicPillButton } from "@/components/ui/MetallicPillButton";
 import { GlowBadge } from "@/components/ui/GlowBadge";
+import { ProductCard3D } from "@/components/ProductCard3D";
 
 const services = [
     {
@@ -169,82 +169,22 @@ export default function DevelopingPage() {
                 </motion.div>
 
                 {/* Services Grid */}
-                <div ref={ref} className="grid lg:grid-cols-3 gap-8 mb-24">
+                <div ref={ref} className="grid lg:grid-cols-2 gap-12 mb-24">
                     {services.map((service, i) => (
-                        <motion.div
+                        <ProductCard3D
                             key={service.id}
-                            initial={{ opacity: 0, y: 40 }}
-                            animate={isInView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ delay: i * 0.1, duration: 0.5 }}
-                        >
-                            <GlassCard
-                                blur={12}
-                                borderRadius={24}
-                                borderOpacity={0}
-                                backgroundColor="#ffffff"
-                                backgroundOpacity={0.4}
-                                onHoverScale={1.02}
-                                className={`p-6 sm:p-8 flex flex-col items-center text-center h-full border shadow-sm ring-1 ring-${service.accentColor}-500/20 border-${service.accentColor}-200/50 hover:ring-${service.accentColor}-500/50 transition-all duration-300`}
-                            >
-
-
-                                {/* Icon / Image */}
-                                <div className="mb-6 flex justify-center w-full">
-                                    {service.isImage ? (
-                                        <div className="relative animate-[float_3s_ease-in-out_infinite]">
-                                            <NextImage
-                                                src={service.icon as string}
-                                                alt={service.title}
-                                                width={120}
-                                                height={120}
-                                                className="w-24 h-24 object-contain mx-auto"
-                                            />
-                                        </div>
-                                    ) : (
-                                        <div className={`w-14 h-14 rounded-2xl flex items-center justify-center bg-gradient-to-br ${service.gradient} shadow-lg text-zinc-900 mx-auto`}>
-                                            {/* @ts-ignore */}
-                                            <service.icon className="w-7 h-7" />
-                                        </div>
-                                    )}
-                                </div>
-                                <h3 className="text-2xl font-bold text-zinc-900 mb-2">
-                                    {service.title}
-                                </h3>
-                                <p className="text-purple-600 font-medium mb-4">{service.tagline}</p>
-                                <p className="text-zinc-600 mb-6 leading-relaxed">
-                                    {service.description}
-                                </p>
-
-                                {/* Features */}
-                                <div className="w-full flex justify-center mb-8">
-                                    <ul className="space-y-3 text-left inline-block max-w-full">
-                                        {service.features.map((feature) => (
-                                            <li key={feature} className="flex items-start gap-3 text-zinc-500 text-sm sm:text-base">
-                                                <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                                                <span className="break-words">{feature}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-
-                                {/* Price & CTA */}
-                                <div className="mt-auto space-y-3">
-                                    {service.exploreLink ? (
-                                        <Link href={service.exploreLink}>
-                                            <MetallicPillButton size="sm">
-                                                Explore
-                                            </MetallicPillButton>
-                                        </Link>
-                                    ) : (
-                                        <Link href="/start-project">
-                                            <MetallicPillButton size="sm">
-                                                Get Started
-                                            </MetallicPillButton>
-                                        </Link>
-                                    )}
-                                </div>
-                            </GlassCard>
-                        </motion.div>
+                            id={service.id}
+                            icon={service.icon}
+                            title={service.title}
+                            tagline={service.tagline}
+                            description={service.description}
+                            features={service.features.slice(0, 4)}
+                            gradient={service.gradient}
+                            textColor="text-purple-600"
+                            index={i}
+                            href={service.exploreLink || "/start-project"}
+                            buttonText={service.exploreLink ? "Explore" : "Get Started"}
+                        />
                     ))}
                 </div>
 

@@ -1,18 +1,14 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
 import {
-    CheckCircle,
-    ArrowRight,
     Sparkles,
 } from "lucide-react";
-import NextImage from "next/image";
-import { GlassCard } from "react-glass-ui";
 import { MetallicPillButton } from "@/components/ui/MetallicPillButton";
 import { GlowBadge } from "@/components/ui/GlowBadge";
-import OceanBackground from "@/components/OceanBackground";
+import { ProductCard3D } from "@/components/ProductCard3D";
 
 const products = [
     {
@@ -132,75 +128,24 @@ export default function ForBusinessPage() {
                 </motion.div>
 
                 {/* Products Grid */}
-                <div ref={ref} className="grid lg:grid-cols-3 gap-8 mb-24">
+                <div ref={ref} className="grid lg:grid-cols-2 gap-12 mb-24">
                     {products.map((product, i) => (
-                        <motion.div
+                        <ProductCard3D
                             key={product.id}
-                            initial={{ opacity: 0, y: 40 }}
-                            animate={isInView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ delay: i * 0.1, duration: 0.5 }}
-                        >
-                            <GlassCard
-                                blur={12}
-                                borderRadius={24}
-                                borderOpacity={0}
-                                backgroundColor="#ffffff"
-                                backgroundOpacity={0.4}
-                                onHoverScale={1.02}
-                                className={`p-6 sm:p-8 flex flex-col items-center text-center h-full border shadow-sm ring-1 ring-${product.accentColor}-500/20 border-${product.accentColor}-200/50 hover:ring-${product.accentColor}-500/50 transition-all duration-300`}
-                            >
-
-
-                                {/* Icon */}
-                                <div className="relative mb-6 group/icon flex justify-center w-full">
-                                    <div className="relative animate-[float_3s_ease-in-out_infinite]">
-                                        <NextImage
-                                            src={product.icon}
-                                            alt={product.title}
-                                            width={160}
-                                            height={160}
-                                            className="w-32 h-32 object-contain mx-auto hover:scale-110 transition-all duration-500"
-                                        />
-                                    </div>
-                                </div>
-
-                                {/* Content */}
-                                <h3 className="text-2xl font-bold text-zinc-900 mb-2 flex items-center justify-center gap-3">
-                                    {product.title}
-                                </h3>
-                                <p className="text-zinc-700 font-medium mb-4">{product.tagline}</p>
-                                <p className="text-zinc-600 mb-6 leading-relaxed">
-                                    {product.description}
-                                </p>
-
-                                {/* Features */}
-                                <div className="w-full flex justify-center mb-8">
-                                    <ul className="space-y-3 text-left inline-block max-w-full">
-                                        {product.features.map((feature) => (
-                                            <li key={feature} className="flex items-start gap-3 text-zinc-500 text-sm sm:text-base">
-                                                <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                                                <span className="break-words">{feature}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-
-                                {/* Price & CTA */}
-                                <div className="mt-auto">
-                                    <Link
-                                        href={`/products/${product.id}`}
-                                        className={`w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-medium transition-all text-zinc-900 shadow-lg bg-white/20 backdrop-blur-md border border-${product.accentColor}-500/30 hover:shadow-xl hover:scale-[1.02]`}
-                                    >
-                                        <span>{product.buttonText || "Get Started"}</span>
-                                        <ArrowRight className="w-4 h-4" />
-                                    </Link>
-                                </div>
-                            </GlassCard>
-                        </motion.div>
+                            id={product.id}
+                            icon={product.icon}
+                            title={product.title}
+                            tagline={product.tagline}
+                            description={product.description}
+                            features={product.features.slice(0, 4)}
+                            gradient={product.gradient}
+                            textColor="text-zinc-700"
+                            index={i}
+                            href={`/products/${product.id}`}
+                            buttonText={product.buttonText || "Get Started"}
+                        />
                     ))}
                 </div>
-
-
 
                 {/* Simple CTA Section */}
                 <motion.div

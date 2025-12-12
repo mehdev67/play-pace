@@ -14,18 +14,16 @@ import { ProductCard3D } from "@/components/ProductCard3D";
 const products = [
     {
         id: "receptionista",
-        icon: "/icons/receptionista.png",
+        icon: "/icons/receptionista-new.png",
         title: "Receptionista",
         tagline: "AI-Powered Receptionist",
         description:
             "Your always on AI receptionist that revolutionizes how you handle customer interactions. Gia answers calls, schedules appointments, and responds to inquiries with human like precision day or night.",
         features: [
-            "24/7 availability",
-            "Natural conversation",
-            "Calendar integration",
-            "Multilingual support",
-            "Customizable voice",
-            "Detailed analytics",
+            "24/7 Active",
+            "Natural Voice",
+            "Calendar Sync",
+            "Multilingual",
         ],
 
         gradient: "from-cyan-500 to-blue-500",
@@ -37,18 +35,16 @@ const products = [
     },
     {
         id: "notario",
-        icon: "/icons/Notario2.0.png",
+        icon: "/icons/notario-new.png",
         title: "Notario",
         tagline: "AI for Email & SMS",
         description:
             "Your dedicated AI assistant that handles email and SMS communication around the clock. Notario automates responses, manages customer inquiries, and keeps conversations flowing any time of day or night.",
         features: [
-            "24/7 email management",
-            "Smart auto replies",
-            "SMS integration add on",
-            "Natural conversation flow",
-            "Multilingual support",
-            "Detailed analytics",
+            "24/7 Active",
+            "Auto Reply",
+            "SMS Ready",
+            "Multilingual",
         ],
 
         gradient: "from-purple-500 to-pink-500",
@@ -60,18 +56,16 @@ const products = [
     },
     {
         id: "clientscreen",
-        icon: "/icons/ClientScreen.png",
+        icon: "/icons/clientscreen-new.png",
         title: "ClientScreen",
         tagline: "AI Driven Client Onboarding",
         description:
             "A complete end to end system that transforms how you bring clients onboard. ClientScreen manages the entire journey from lead arrival to signed contract and invoice all running seamlessly in the background.",
         features: [
-            "Automatic lead capture",
-            "AI powered qualification",
-            "Auto generated quotes",
-            "E signature integration",
-            "Automated invoicing",
-            "Native CRM integrations",
+            "Lead Capture",
+            "AI Qualify",
+            "Auto Quotes",
+            "E-Signatures",
         ],
 
         gradient: "from-emerald-500 to-teal-500",

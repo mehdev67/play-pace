@@ -17,6 +17,8 @@ interface ProductCard3DProps {
     gradient: string;
     textColor: string;
     index: number;
+    href?: string;
+    buttonText?: string;
 }
 
 export function ProductCard3D({
@@ -29,6 +31,8 @@ export function ProductCard3D({
     gradient,
     textColor,
     index,
+    href,
+    buttonText = 'Get Started',
 }: ProductCard3DProps) {
     const cardRef = useRef<HTMLDivElement>(null);
     const [isHovered, setIsHovered] = useState(false);
@@ -179,9 +183,9 @@ export function ProductCard3D({
 
             {/* CTA Button - Floating below card, overlapping edge */}
             <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 z-30 w-[85%]">
-                <Link href={`/products/${id}`} className="block w-full">
+                <Link href={href || `/products/${id}`} className="block w-full">
                     <MetallicPillButton fullWidth>
-                        Get Started
+                        {buttonText}
                     </MetallicPillButton>
                 </Link>
             </div>
